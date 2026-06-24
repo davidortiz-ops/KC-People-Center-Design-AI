@@ -1,6 +1,6 @@
 # Diseño de Soluciones
 
-> Chapter de **People Center Design**, del **Knowledge Center de Pragma**.
+> Chapter de **People Center Design - Pragma**.
 
 Artefactos para la fase de **diseño de soluciones**, con foco en **experiencia de usuario,
 accesibilidad y madurez de design systems**. Incluye evaluadores heurísticos, auditorías

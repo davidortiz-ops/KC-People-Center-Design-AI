@@ -1,9 +1,8 @@
-# PromptsOps — People Center Design · Knowledge Center de Pragma
+# PromptsOps — People Center Design - Pragma
 
-Biblioteca de **skills, prompts y artefactos** de **People Center Design**, parte del
-**Knowledge Center de Pragma**. Reúne agentes y prompts reutilizables que cubren el ciclo
-de un proyecto digital: **descubrimiento de negocio**, **diseño de soluciones**,
-**investigación** y **SEO**.
+Biblioteca de **skills, prompts y artefactos** de **People Center Design - Pragma**.
+Reúne agentes y prompts reutilizables que cubren el ciclo de un proyecto digital:
+**descubrimiento de negocio**, **diseño de soluciones**, **investigación** y **SEO**.
 
 La biblioteca se organiza en **chapters**. Cada chapter es una carpeta con sus artefactos
 y su propia documentación (`README.md`).
@@ -53,7 +52,7 @@ y copiarlo al portapapeles. El visor lee los archivos directamente de las carpet
 
 | Chapter | Carpeta | Artefactos | Enfoque |
 |---------|---------|:----------:|---------|
-| **Business Discovery** | [`Business Discovery/`](Business%20Discovery/README.md) | 10 | Diagnóstico de problemas, suposiciones, alcance, métricas y compliance. |
+| **Business Discovery** | [`business-discovery/`](business-discovery/README.md) | 10 | Diagnóstico de problemas, suposiciones, alcance, métricas y compliance. |
 | **Diseño de Soluciones** | [`diseno-de-soluciones/`](diseno-de-soluciones/README.md) | 5 | UX, accesibilidad (WCAG) y madurez de design systems. |
 | **Research** | [`research/`](research/README.md) | 7 | Investigación cualitativa y de mercado: personas, journey maps, tendencias. |
 | **SEO** | [`seo/`](seo/README.md) | 21 | Auditoría, SEO técnico, contenido/E-E-A-T, datos de Google, local, GEO y estrategia. |
@@ -76,9 +75,9 @@ muestra una puntuación 0-10 como **Prompt**, **Skill** y **Agente**):
 
 ```
 PromptsOps/
-├── README.md                  ← este archivo (índice del Knowledge Center)
+├── README.md                  ← este archivo (índice de la biblioteca)
 ├── index.html                 ← visor de la biblioteca
-├── Business Discovery/        ← chapter (10 artefactos + README)
+├── business-discovery/        ← chapter (10 artefactos + README)
 ├── diseno-de-soluciones/      ← chapter (5 artefactos + README)
 ├── research/                  ← chapter (7 artefactos + README)
 └── seo/                       ← chapter (21 skills + scripts, references, hooks + README)
