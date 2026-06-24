@@ -1,6 +1,6 @@
 # Research
 
-> Chapter del **Knowledge Center de People Center Design** de **Pragma**.
+> Chapter de **People Center Design**, del **Knowledge Center de Pragma**.
 
 Artefactos para **investigación de usuario y de mercado**. Son principalmente **prompts**
 de sistema (system prompts) en español que definen roles de investigador senior para

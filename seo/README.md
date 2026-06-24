@@ -1,6 +1,6 @@
 # SEO
 
-> Chapter del **Knowledge Center de People Center Design** de **Pragma**.
+> Chapter de **People Center Design**, del **Knowledge Center de Pragma**.
 
 Colección de **21 skills de SEO** para Claude Code, diseñadas para ser **agnósticas**
 (no dependen de ningún sitio, dominio ni stack concreto) y **completamente en español**.

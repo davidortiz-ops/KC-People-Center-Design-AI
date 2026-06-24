@@ -1,14 +1,47 @@
-# PromptsOps — Knowledge Center de People Center Design (Pragma)
+# PromptsOps — People Center Design · Knowledge Center de Pragma
 
-Biblioteca de **skills, prompts y artefactos** del **Knowledge Center de People Center
-Design** de **Pragma**. Reúne agentes y prompts reutilizables que cubren el ciclo de un
-proyecto digital: **descubrimiento de negocio**, **diseño de soluciones**,
+Biblioteca de **skills, prompts y artefactos** de **People Center Design**, parte del
+**Knowledge Center de Pragma**. Reúne agentes y prompts reutilizables que cubren el ciclo
+de un proyecto digital: **descubrimiento de negocio**, **diseño de soluciones**,
 **investigación** y **SEO**.
 
 La biblioteca se organiza en **chapters**. Cada chapter es una carpeta con sus artefactos
 y su propia documentación (`README.md`).
 
 En total: **43 artefactos** en **4 chapters**.
+
+## Cómo descargar y usar (sin conocimientos de Git)
+
+> Este repositorio es **privado**. Para acceder necesitas estar **invitado** e **iniciar
+> sesión** en GitHub con tu cuenta.
+
+### Opción A — Leer directamente en GitHub (lo más simple)
+1. Abre el repositorio en el navegador: `https://github.com/davidortiz-ops/KC-People-Center-Design-AI`
+2. Entra a la carpeta del chapter que te interese y haz clic en cualquier archivo `.md`.
+3. GitHub lo muestra formateado. Usa el botón **"Copy raw file"** (icono de copiar) para
+   copiar el contenido y pegarlo donde lo necesites (por ejemplo, en el chat de la IA).
+
+### Opción B — Descargar todo en un ZIP
+1. En la página principal del repositorio, haz clic en el botón verde **`<> Code`**.
+2. Elige **"Download ZIP"**.
+3. Descomprime el archivo en tu computador (clic derecho → *Extraer todo*).
+4. Abre cualquier archivo `.md` con un editor de texto, Bloc de notas o Visual Studio Code,
+   o léelo desde el visor (ver abajo).
+
+### Usar el visor `index.html`
+El visor es un catálogo visual de todos los artefactos. Para que cargue el contenido de los
+archivos, el navegador necesita "servir" la carpeta (al abrir el `index.html` con doble clic
+puede que no cargue los textos por seguridad del navegador). La forma gratuita más sencilla:
+
+1. Abre una terminal **dentro de la carpeta descargada**.
+2. Ejecuta (requiere [Python](https://www.python.org/downloads/) instalado):
+   ```
+   python -m http.server 8000
+   ```
+3. Abre en el navegador: `http://localhost:8000/index.html`
+
+> Si no tienes Python o prefieres algo más directo, usa la **Opción A** (leer en GitHub) o
+> abre los archivos `.md` uno por uno desde la carpeta descargada.
 
 ## Visor
 

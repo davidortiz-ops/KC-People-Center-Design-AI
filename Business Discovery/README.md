@@ -1,6 +1,6 @@
 # Business Discovery
 
-> Chapter del **Knowledge Center de People Center Design** de **Pragma**.
+> Chapter de **People Center Design**, del **Knowledge Center de Pragma**.
 
 Artefactos para la fase de **descubrimiento de negocio**: diagnóstico de problemas,
 validación de suposiciones, definición de alcance, métricas y guardrails regulatorios.
