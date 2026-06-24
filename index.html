@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PromptsOps - Biblioteca de Skills y Prompts</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #f4f6f9; color: #1a1a2e; min-height: 100vh; }
+  .header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: #fff; padding: 40px 48px; }
+  .header h1 { font-size: 28px; font-weight: 800; letter-spacing: -0.5px; }
+  .header p { font-size: 14px; color: #8899b4; margin-top: 6px; }
+  .header .stats { margin-top: 12px; font-size: 13px; color: #6c7fa0; }
+  .header .stats span { color: #e94560; font-weight: 600; }
+  .container { max-width: 1400px; margin: 0 auto; padding: 32px 48px; }
+  .chapter { margin-bottom: 40px; }
+  .chapter-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid #e0e4ea; }
+  .chapter-header h2 { font-size: 18px; font-weight: 700; color: #1a1a2e; text-transform: uppercase; letter-spacing: 0.5px; }
+  .chapter-header .badge { background: #e94560; color: #fff; font-size: 11px; font-weight: 700; padding: 2px 10px; border-radius: 12px; }
+  .chapter-header .folder { font-size: 13px; color: #6c7fa0; font-weight: 500; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); gap: 12px; }
+  .card { background: #fff; border-radius: 10px; border: 1px solid #e8eaef; padding: 16px 18px; cursor: pointer; transition: all 0.15s ease; display: flex; flex-direction: column; }
+  .card:hover { border-color: #0f3460; box-shadow: 0 4px 16px rgba(15,52,96,0.1); transform: translateY(-1px); }
+  .card-title { font-size: 15px; font-weight: 700; color: #0f3460; margin-bottom: 6px; }
+  .card-desc { font-size: 12.5px; line-height: 1.5; color: #4a5568; flex: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .card-scores { display: flex; gap: 8px; margin-top: 10px; padding-top: 10px; border-top: 1px solid #edf0f5; flex-wrap: wrap; }
+  .score { font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 5px; display: inline-flex; align-items: center; gap: 4px; }
+  .score-green { background: #c6f6d5; color: #22543d; }
+  .score-red { background: #fed7d7; color: #822727; }
+  .card-meta { display: flex; align-items: center; gap: 8px; margin-top: 6px; font-size: 11px; color: #8899b4; }
+  .card-meta .file { font-family: 'SF Mono', 'Fira Code', monospace; background: #f0f2f5; padding: 2px 8px; border-radius: 4px; font-size: 10.5px; color: #4a5568; }
+  .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); z-index: 1000; }
+  .modal-overlay.active { display: flex; align-items: center; justify-content: center; }
+  .modal { background: #fff; border-radius: 12px; width: 90%; max-width: 960px; max-height: 90vh; display: flex; flex-direction: column; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+  .modal-header { display: flex; align-items: center; justify-content: space-between; padding: 18px 24px; border-bottom: 1px solid #e8eaef; }
+  .modal-header h3 { font-size: 16px; font-weight: 700; color: #1a1a2e; }
+  .modal-header .close-btn { background: none; border: none; font-size: 24px; cursor: pointer; color: #8899b4; padding: 4px 8px; border-radius: 6px; transition: all 0.15s; }
+  .modal-header .close-btn:hover { background: #f0f2f5; color: #1a1a2e; }
+  .modal-body { flex: 1; overflow-y: auto; padding: 24px; font-size: 13px; line-height: 1.6; color: #2d3748; }
+  .modal-body pre { white-space: pre-wrap; word-wrap: break-word; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 12px; line-height: 1.5; background: #f7f8fa; padding: 16px; border-radius: 8px; border: 1px solid #e8eaef; }
+  .modal-body .loading { text-align: center; padding: 40px; color: #8899b4; font-size: 14px; }
+  .modal-body .error { text-align: center; padding: 40px; color: #e94560; font-size: 14px; }
+  .modal-footer { padding: 12px 24px; border-top: 1px solid #e8eaef; font-size: 12px; color: #8899b4; display: flex; justify-content: space-between; align-items: center; }
+  .copy-btn { background: #f0f2f5; border: 1px solid #e0e4ea; padding: 6px 14px; border-radius: 6px; font-size: 12px; cursor: pointer; color: #4a5568; font-weight: 500; transition: all 0.15s; }
+  .copy-btn:hover { background: #e0e4ea; }
+  .copy-btn.copied { background: #c6f6d5; border-color: #9ae6b4; color: #276749; }
+  @media (max-width: 768px) { .header { padding: 24px; } .container { padding: 16px; } .grid { grid-template-columns: 1fr; } .modal { width: 95%; max-height: 95vh; } }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>PromptsOps</h1>
+  <p>Biblioteca de Skills, Prompts y Artefactos de Consultoría · Pragma</p>
+  <div class="stats"><span id="totalCount">0</span> archivos en <span>4</span> capítulos</div>
+</div>
+
+<div class="container" id="app">
+  <div class="chapter" id="chapter-Business Discovery">
+    <div class="chapter-header">
+      <h2>Business Discovery</h2>
+      <span class="folder">📁 Business Discovery/</span>
+      <span class="badge" id="count-Business Discovery">0</span>
+    </div>
+    <div class="grid" id="grid-Business Discovery"></div>
+  </div>
+  <div class="chapter" id="chapter-Diseño de soluciones">
+    <div class="chapter-header">
+      <h2>Diseño de Soluciones</h2>
+      <span class="folder">📁 diseno-de-soluciones/</span>
+      <span class="badge" id="count-Diseño de soluciones">0</span>
+    </div>
+    <div class="grid" id="grid-Diseño de soluciones"></div>
+  </div>
+  <div class="chapter" id="chapter-SEO">
+    <div class="chapter-header">
+      <h2>SEO</h2>
+      <span class="folder">📁 seo/</span>
+      <span class="badge" id="count-SEO">0</span>
+    </div>
+    <div class="grid" id="grid-SEO"></div>
+  </div>
+  <div class="chapter" id="chapter-Research">
+    <div class="chapter-header">
+      <h2>Research</h2>
+      <span class="folder">📁 research/</span>
+      <span class="badge" id="count-Research">0</span>
+    </div>
+    <div class="grid" id="grid-Research"></div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="modalTitle">—</h3>
+      <button class="close-btn" onclick="closeModal()">&times;</button>
+    </div>
+    <div class="modal-body" id="modalBody"><div class="loading">Cargando contenido...</div></div>
+    <div class="modal-footer">
+      <span id="modalFile">—</span>
+      <button class="copy-btn" id="copyBtn" onclick="copyContent()">Copiar contenido</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const DATA = [
+  { file: 'anubis-pdd.md', chapter: 'Business Discovery', title: 'Anubis — Problem Driven Development', desc: 'Senior PM + Systems Architect que diagnostica problemas de negocio con un framework de 6 etapas, detecta sesgos cognitivos, integra inteligencia y entrega roadmaps ejecutables.', type: 'skill', promptScore: 6, skillScore: 10, agentScore: 9 },
+  { file: 'argos-analisis-categoria.md', chapter: 'Business Discovery', title: 'Argos — Inteligencia Competitiva', desc: 'Agente de análisis de categoría de ecosistemas digitales. Observa el mercado competitivo, propuestas de valor, sentimiento de usuario, capacidades tecnológicas y tendencias.', type: 'prompt', promptScore: 9, skillScore: 2, agentScore: 7 },
+  { file: 'atenea-roadmap.md', chapter: 'Business Discovery', title: 'Atenea — Roadmap Estratégico', desc: 'Agente de diseño de roadmaps estratégicos. Valida hipótesis, diseña roadmaps MVE→R2→R3, se adapta a metodologías, lee tableros de Miro.', type: 'skill', promptScore: 6, skillScore: 9, agentScore: 9 },
+  { file: 'cassandra-suposiciones-criticas.md', chapter: 'Business Discovery', title: 'Casandra — Suposiciones Críticas', desc: 'Validación brutal de suposiciones críticas y simulación de riesgos tempranos. Identifica Saltos de Fe, modela escenarios Monte Carlo, diseña experimentos.', type: 'skill', promptScore: 6, skillScore: 9, agentScore: 9 },
+  { file: 'hermes-funcional.md', chapter: 'Business Discovery', title: 'Hermes — Definición Funcional', desc: 'Definición funcional sin zonas grises para Financial y Retail. Modela reglas de negocio, edge cases, Gherkin, entidades e impacto en procesos.', type: 'skill', promptScore: 6, skillScore: 10, agentScore: 9 },
+  { file: 'maat-alcance-solucion.md', chapter: 'Business Discovery', title: 'Maat — Alcance de Solución', desc: 'Definición de alcance quirúrgico. Toma outputs de Anubis y convierte el diagnóstico en un alcance acotado con Boundary Maps, Dependency Radars y Constraints Canvas.', type: 'skill', promptScore: 6, skillScore: 10, agentScore: 9 },
+  { file: 'mimir-nsm.md', chapter: 'Business Discovery', title: 'Mímir — North Star Metric', desc: 'Arquitectura de métricas de negocio: North Star Metric, OMTM, KPI Tree, embudos de conversión y plan de instrumentación.', type: 'skill', promptScore: 6, skillScore: 9, agentScore: 9 },
+  { file: 'nemesis-detonantes.md', chapter: 'Business Discovery', title: 'Némesis — Detonantes', desc: 'Procesa datos no estructurados para extraer detonantes reales. Ingiere insumos crudos, extrae entidades, detecta fricción, clusteriza patrones y valida hipótesis.', type: 'skill', promptScore: 5, skillScore: 10, agentScore: 9 },
+  { file: 'themis-guardrails.md', chapter: 'Business Discovery', title: 'Themis — Compliance & Guardrails', desc: 'Inteligencia regulatoria y guardrails de diseño. Mapea regulación según país e industria y traduce compliance en criterios de aceptación.', type: 'skill', promptScore: 5, skillScore: 10, agentScore: 9 },
+  { file: 'thoth-definicion-funcional.md', chapter: 'Business Discovery', title: 'Thoth — Definición Funcional', desc: 'Define requerimientos sin zonas grises: modela reglas de negocio, edge cases, Gherkin, entidades y análisis de impacto en procesos.', type: 'skill', promptScore: 6, skillScore: 9, agentScore: 8 },
+  { file: 'auditor-accesibilidad-digital-wcag.md', chapter: 'Diseño de soluciones', title: 'Auditor de Accesibilidad Digital WCAG 2.2', desc: 'Experto en accesibilidad digital WCAG 2.2 con énfasis en normativa colombiana para entidades financieras. Auditorías automáticas y manuales.', type: 'skill', promptScore: 7, skillScore: 9, agentScore: 8 },
+  { file: 'consultor-madurez-design-systems.md', chapter: 'Diseño de soluciones', title: 'Consultor de Madurez Design Systems', desc: 'Consultor Senior especializado en el modelo de madurez de Pragma. Diagnóstico de gestión y operación de Design Systems con hoja de ruta accionable.', type: 'skill', promptScore: 7, skillScore: 9, agentScore: 8 },
+  { file: 'heuristy-evaluacion-heuristica-nielsen.md', chapter: 'Diseño de soluciones', title: 'Heuristy — Evaluación Heurística Nielsen', desc: 'Evaluación heurística basada en las 10 heurísticas de usabilidad de Nielsen. Evalúa interfaces web, móviles y desktop con reportes priorizados.', type: 'skill', promptScore: 7, skillScore: 9, agentScore: 8 },
+  { file: 'proto-persona-banca-top-tier.md', chapter: 'Diseño de soluciones', title: 'Proto-Persona Banca Top Tier', desc: 'Proto-persona de cliente bancarizado de altos ingresos (Top Tier). Valida usabilidad y experiencia de producto digital bancario.', type: 'reference', promptScore: 4, skillScore: 2, agentScore: 1 },
+  { file: 'tognazzini-revision-heuristica-creditos-vivienda.md', chapter: 'Diseño de soluciones', title: 'Tognazzini — Créditos de Vivienda', desc: 'Revisión heurística de Tognazzini para evaluar la experiencia de usuario en solicitudes de crédito de vivienda convencional y especial.', type: 'skill', promptScore: 6, skillScore: 9, agentScore: 9 },
+  { file: 'seo/SKILL.md', chapter: 'SEO', title: 'SEO — Análisis SEO Universal', desc: 'Análisis SEO integral: auditorías completas, análisis de página individual, SEO técnico, detección de schema, calidad de contenido, optimización de imágenes y GEO para AI Overviews. Orquesta 20 sub-skills.', type: 'skill', promptScore: 7, skillScore: 10, agentScore: 9 },
+  { file: 'seo-audit/SKILL.md', chapter: 'SEO', title: 'Auditoría SEO Completa de Sitio', desc: 'Auditoría SEO completa con delegación paralela a subagentes. Rastrea hasta 500 páginas, detecta el tipo de negocio, delega a especialistas y genera un health score.', type: 'skill', promptScore: 7, skillScore: 10, agentScore: 9 },
+  { file: 'seo-page/SKILL.md', chapter: 'SEO', title: 'Análisis SEO de Página Individual', desc: 'Análisis SEO profundo de una sola página: elementos on-page, calidad de contenido, meta tags técnicos, schema, imágenes y rendimiento.', type: 'skill', promptScore: 8, skillScore: 9, agentScore: 8 },
+  { file: 'seo-technical/SKILL.md', chapter: 'SEO', title: 'SEO: Rastreo e Indexación', desc: 'Reglas de rastreo e indexación: canonical, prevención de contenido duplicado, directivas robots, automatización de sitemaps, gestión de crawlers de IA y códigos HTTP.', type: 'skill', promptScore: 7, skillScore: 9, agentScore: 7 },
+  { file: 'seo-content/SKILL.md', chapter: 'SEO', title: 'Calidad de Contenido y E-E-A-T', desc: 'Análisis de calidad de contenido y E-E-A-T con preparación para citas de IA, ejemplos de palabras LSI y detección de patrones de escritura por IA.', type: 'skill', promptScore: 8, skillScore: 9, agentScore: 8 },
+  { file: 'seo-schema/SKILL.md', chapter: 'SEO', title: 'SEO: Schema y Rich Snippets', desc: 'Guía para implementar datos estructurados JSON-LD, optimizar para Featured Snippets y cobertura completa de tipos de schema.', type: 'skill', promptScore: 7, skillScore: 9, agentScore: 7 },
+  { file: 'seo-on-page/SKILL.md', chapter: 'SEO', title: 'SEO: Meta Tags y Open Graph', desc: 'Implementación de title tags, meta descriptions, Open Graph, Twitter Cards, favicon y Google Discover. Incluye ejemplos reales de meta títulos y meta descripciones.', type: 'skill', promptScore: 7, skillScore: 9, agentScore: 7 },
+  { file: 'seo-images/SKILL.md', chapter: 'SEO', title: 'SEO: Imágenes y Video', desc: 'Mejores prácticas para optimizar imágenes y videos en Google Search, Google Images y resultados de búsqueda de video.', type: 'skill', promptScore: 7, skillScore: 9, agentScore: 7 },
+  { file: 'seo-performance/SKILL.md', chapter: 'SEO', title: 'SEO: Rendimiento y Core Web Vitals', desc: 'Optimización de Core Web Vitals (LCP, CLS, INP), indexación mobile-first y señales de experiencia de página.', type: 'skill', promptScore: 7, skillScore: 9, agentScore: 7 },
+  { file: 'seo-accessibility/SKILL.md', chapter: 'SEO', title: 'SEO: Accesibilidad', desc: 'Roles ARIA, navegación de salto (skip links), gestión de foco en SPAs, alt text y prácticas de accesibilidad (WCAG 2.1 AA) que impactan el SEO.', type: 'skill', promptScore: 7, skillScore: 9, agentScore: 7 },
+  { file: 'seo-sitemap/SKILL.md', chapter: 'SEO', title: 'SEO: Sitemaps y Gestión de URLs', desc: 'Reglas para sitemaps XML, sitemap index, sitemaps de video/imagen/noticias y envío a motores de búsqueda (Google, Bing, IndexNow).', type: 'skill', promptScore: 7, skillScore: 9, agentScore: 7 },
+  { file: 'seo-geo/SKILL.md', chapter: 'SEO', title: 'Búsqueda con IA / Optimización GEO', desc: 'Optimiza contenido para AI Overviews, ChatGPT Search y Perplexity. Análisis GEO con señales de marca, accesibilidad de crawlers de IA y citabilidad a nivel de pasaje.', type: 'skill', promptScore: 8, skillScore: 9, agentScore: 8 },
+  { file: 'seo-google/SKILL.md', chapter: 'SEO', title: 'APIs de Google para SEO + GSC Insights', desc: 'APIs de Google: Search Console, PageSpeed Insights v5 + CrUX, Indexing API v3, GA4 tráfico orgánico y NLP. Incluye el workflow de Oportunidades de Keywords (GSC Insights) con script propio gsc_query.py.', type: 'skill', promptScore: 8, skillScore: 9, agentScore: 8 },
+  { file: 'seo-local/SKILL.md', chapter: 'SEO', title: 'Análisis de SEO Local', desc: 'SEO Local: optimización de GBP, consistencia NAP, salud de citas, señales de reseñas, schema local, SEO multi-ubicación y recomendaciones por industria.', type: 'skill', promptScore: 7, skillScore: 9, agentScore: 8 },
+  { file: 'seo-ecommerce/SKILL.md', chapter: 'SEO', title: 'SEO para E-commerce', desc: 'SEO para e-commerce: validación de schema de producto, visibilidad en Google Shopping, brechas de keywords en marketplaces y optimización de páginas de producto.', type: 'skill', promptScore: 7, skillScore: 9, agentScore: 8 },
+  { file: 'seo-cluster/SKILL.md', chapter: 'SEO', title: 'Clustering Semántico de Topics', desc: 'Clustering de keywords basado en superposición de SERP para arquitectura de contenido. Diseña clusters hub-and-spoke con matrices de enlazado interno.', type: 'skill', promptScore: 7, skillScore: 9, agentScore: 8 },
+  { file: 'seo-competitor-pages/SKILL.md', chapter: 'SEO', title: 'Páginas de Comparación de Competidores', desc: 'Genera páginas de comparación de competidores optimizadas para SEO: layouts X vs Y, matrices de características, schema markup y optimización de conversión.', type: 'skill', promptScore: 7, skillScore: 9, agentScore: 8 },
+  { file: 'seo-hreflang/SKILL.md', chapter: 'SEO', title: 'SEO Internacional y Hreflang', desc: 'Reglas completas para sitios multilingües y multirregionales: implementación de hreflang, geotargeting, páginas adaptativas por ubicación y errores comunes.', type: 'skill', promptScore: 7, skillScore: 9, agentScore: 7 },
+  { file: 'seo-programmatic/SKILL.md', chapter: 'SEO', title: 'SEO Programático', desc: 'SEO programático para páginas a escala: motores de plantillas, patrones de URL, automatización de enlazado interno y salvaguardas contra contenido thin.', type: 'skill', promptScore: 7, skillScore: 9, agentScore: 8 },
+  { file: 'seo-plan/SKILL.md', chapter: 'SEO', title: 'Planificación Estratégica SEO', desc: 'Planificación estratégica SEO: plantillas por industria, análisis competitivo, estrategia de contenido y hoja de ruta de implementación.', type: 'skill', promptScore: 7, skillScore: 9, agentScore: 8 },
+  { file: 'seo-sxo/SKILL.md', chapter: 'SEO', title: 'Search Experience Optimization (SXO)', desc: 'Ingeniería inversa de SERPs: detecta page-type mismatches, deriva user stories desde la intención de búsqueda y scorea páginas desde múltiples perspectivas de persona.', type: 'skill', promptScore: 8, skillScore: 9, agentScore: 8 },
+  { file: 'analisis-contenido-tematico.md', chapter: 'Research', title: 'Análisis de Contenido Temático', desc: 'Investigador cualitativo senior experto en análisis de contenido temático. Codificación inductiva y deductiva de entrevistas, documentos y material audiovisual.', type: 'prompt', promptScore: 10, skillScore: 1, agentScore: 6 },
+  { file: 'analisis-tendencias-mercado.md', chapter: 'Research', title: 'Análisis de Tendencias de Mercado', desc: 'Analista senior en inteligencia de mercado y prospectiva estratégica. Identifica tendencias emergentes y construye escenarios futuros basados en evidencia.', type: 'prompt', promptScore: 10, skillScore: 1, agentScore: 6 },
+  { file: 'analisis-vacantes-empleo.md', chapter: 'Research', title: 'Análisis de Vacantes de Empleo', desc: 'Analista en PLN especializado en extracción estructurada de información a partir de vacantes de empleo del sector desarrollo de software.', type: 'prompt', promptScore: 9, skillScore: 1, agentScore: 5 },
+  { file: 'behavioral-customer-journey-map.md', chapter: 'Research', title: 'Behavioral Customer Journey Map', desc: 'Experto en UX research y análisis de comportamiento del cliente. Construye Behavioral Customer Journey Maps basados en evidencia con emociones y fricciones.', type: 'prompt', promptScore: 10, skillScore: 1, agentScore: 6 },
+  { file: 'creacion-user-persona.md', chapter: 'Research', title: 'Creación de User Personas', desc: 'Investigador UX research senior especializado en análisis cualitativo. Construye User Personas realistas, accionables y basadas en evidencia.', type: 'prompt', promptScore: 10, skillScore: 1, agentScore: 6 },
+  { file: 'sesgos-cognitivos-intervenciones.md', chapter: 'Research', title: 'Sesgos Cognitivos e Intervenciones', desc: 'Behavioral Specialist en UX Research y ciencias del comportamiento. Identifica sesgos cognitivos y diseña intervenciones conductuales (nudges) éticas.', type: 'prompt', promptScore: 10, skillScore: 1, agentScore: 7 },
+  { file: 'usuarios-sinteticos.md', chapter: 'Research', title: 'Usuarios Sintéticos — Banca Premium', desc: 'Facilitador de sesiones estructuradas para crear usuarios sintéticos basados en datos reales para explorar productos digitales de banca premium.', type: 'prompt', promptScore: 9, skillScore: 1, agentScore: 7 },
+];
+
+let currentContent = '';
+let currentFile = '';
+
+function scoreClass(item, type) {
+  return item.type === type ? 'score-green' : 'score-red';
+}
+
+function scoreLabel(type) {
+  const labels = { prompt: 'Prompt', skill: 'Skill', agent: 'Agente' };
+  return labels[type] || type;
+}
+
+function render() {
+  document.getElementById('totalCount').textContent = DATA.length;
+  const chapters = {};
+  DATA.forEach(item => {
+    if (!chapters[item.chapter]) chapters[item.chapter] = [];
+    chapters[item.chapter].push(item);
+  });
+  Object.keys(chapters).forEach(ch => {
+    const grid = document.getElementById('grid-' + ch);
+    const badge = document.getElementById('count-' + ch);
+    if (!grid) return;
+    badge.textContent = chapters[ch].length;
+    chapters[ch].forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <div class="card-title">${item.title}</div>
+        <div class="card-desc">${item.desc}</div>
+        <div class="card-scores">
+          <span class="score ${scoreClass(item, 'prompt')}">📝 Prompt ${item.promptScore}/10</span>
+          <span class="score ${scoreClass(item, 'skill')}">⚡ Skill ${item.skillScore}/10</span>
+          <span class="score ${scoreClass(item, 'agent')}">🤖 Agente ${item.agentScore}/10</span>
+        </div>
+        <div class="card-meta"><span class="file">${item.file}</span></div>
+      `;
+      card.onclick = () => openModal(item);
+      grid.appendChild(card);
+    });
+  });
+}
+
+function openModal(item) {
+  currentFile = item.file;
+  document.getElementById('modalTitle').textContent = item.title;
+  document.getElementById('modalFile').textContent = '📄 ' + item.chapter + '/' + item.file;
+  document.getElementById('modalBody').innerHTML = '<div class="loading">Cargando contenido...</div>';
+  document.getElementById('modal').classList.add('active');
+  document.getElementById('copyBtn').className = 'copy-btn';
+  document.getElementById('copyBtn').textContent = 'Copiar contenido';
+  loadContent(item);
+}
+
+function closeModal() {
+  document.getElementById('modal').classList.remove('active');
+}
+
+function loadContent(item) {
+  const body = document.getElementById('modalBody');
+  const folderMap = {
+    'Business Discovery': 'Business Discovery',
+    'Diseño de soluciones': 'diseno-de-soluciones',
+    'SEO': 'seo',
+    'Research': 'research'
+  };
+  const folder = folderMap[item.chapter];
+  const path = folder + '/' + item.file;
+  fetch(encodeURI(path))
+    .then(r => {
+      if (!r.ok) throw new Error('No se pudo cargar el archivo');
+      return r.text();
+    })
+    .then(text => {
+      currentContent = text;
+      body.innerHTML = '<pre>' + escapeHtml(text) + '</pre>';
+    })
+    .catch(err => {
+      body.innerHTML = '<div class="error">Error al cargar: ' + err.message + '</div>';
+    });
+}
+
+function escapeHtml(text) {
+  return text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function copyContent() {
+  if (!currentContent) return;
+  navigator.clipboard.writeText(currentContent).then(() => {
+    const btn = document.getElementById('copyBtn');
+    btn.textContent = '¡Copiado!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copiar contenido'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+
+document.getElementById('modal').onclick = function(e) { if (e.target === this) closeModal(); };
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+
+render();
+</script>
+</body>
+</html>

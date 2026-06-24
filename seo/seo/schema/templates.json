@@ -1,0 +1,213 @@
+{
+  "templates": [
+    {
+      "type": "VideoObject",
+      "description": "Páginas de contenido de video con miniaturas, duración y URLs de reproducción. Habilita resultados enriquecidos de video en Google Search.",
+      "template": {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "[Título del video]",
+        "description": "[Descripción del video]",
+        "thumbnailUrl": "[URL de la imagen miniatura]",
+        "uploadDate": "[AAAA-MM-DD]",
+        "duration": "[Duración ISO 8601, ej. PT1H30M]",
+        "contentUrl": "[URL directa del archivo de video]",
+        "embedUrl": "[URL del reproductor embebido]",
+        "publisher": {
+          "@type": "Organization",
+          "name": "[Nombre del publisher]",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "[URL del logo]"
+          }
+        }
+      }
+    },
+    {
+      "type": "BroadcastEvent",
+      "description": "Contenido en transmisión en vivo para la insignia EN VIVO en los resultados de Google Search. Requiere VideoObject y el flag isLiveBroadcast.",
+      "template": {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "[Título de la transmisión en vivo]",
+        "description": "[Descripción de la transmisión en vivo]",
+        "thumbnailUrl": "[URL de la imagen miniatura]",
+        "uploadDate": "[AAAA-MM-DD]",
+        "contentUrl": "[URL de la transmisión]",
+        "embedUrl": "[URL del reproductor embebido]",
+        "publication": {
+          "@type": "BroadcastEvent",
+          "isLiveBroadcast": true,
+          "startDate": "[AAAA-MM-DDTHH:MM:SSZ]",
+          "endDate": "[AAAA-MM-DDTHH:MM:SSZ]"
+        }
+      }
+    },
+    {
+      "type": "Clip",
+      "description": "Momentos o capítulos clave dentro de un video. Habilita resultados enriquecidos de momentos clave con enlaces por timestamp.",
+      "template": {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "[Título del video]",
+        "description": "[Descripción del video]",
+        "thumbnailUrl": "[URL de la imagen miniatura]",
+        "uploadDate": "[AAAA-MM-DD]",
+        "contentUrl": "[URL directa del archivo de video]",
+        "hasPart": [
+          {
+            "@type": "Clip",
+            "name": "[Título del clip]",
+            "startOffset": 0,
+            "endOffset": 120,
+            "url": "[URL del video con timestamp, ej. ?t=0]"
+          },
+          {
+            "@type": "Clip",
+            "name": "[Título del siguiente clip]",
+            "startOffset": 120,
+            "endOffset": 300,
+            "url": "[URL del video con timestamp, ej. ?t=120]"
+          }
+        ]
+      }
+    },
+    {
+      "type": "SeekToAction",
+      "description": "Habilita la funcionalidad de salto en los resultados enriquecidos de video. Permite a los usuarios saltar a timestamps específicos desde la búsqueda.",
+      "template": {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "[Título del video]",
+        "description": "[Descripción del video]",
+        "thumbnailUrl": "[URL de la imagen miniatura]",
+        "uploadDate": "[AAAA-MM-DD]",
+        "contentUrl": "[URL directa del archivo de video]",
+        "potentialAction": {
+          "@type": "SeekToAction",
+          "target": "[URL del video]?t={seek_to_second_number}",
+          "startOffset-input": "required name=seek_to_second_number"
+        }
+      }
+    },
+    {
+      "type": "SoftwareSourceCode",
+      "description": "Páginas de código abierto y repositorios de código. Describe el lenguaje de programación, la plataforma y la ubicación del repositorio.",
+      "template": {
+        "@context": "https://schema.org",
+        "@type": "SoftwareSourceCode",
+        "name": "[Nombre del repositorio]",
+        "description": "[Descripción del repositorio]",
+        "codeRepository": "[URL del repositorio, ej. https://github.com/org/repo]",
+        "programmingLanguage": "[Lenguaje, ej. Python]",
+        "runtimePlatform": "[Plataforma, ej. Node.js]",
+        "author": {
+          "@type": "Person",
+          "name": "[Nombre del autor]"
+        },
+        "license": "[URL de la licencia, ej. https://opensource.org/licenses/MIT]",
+        "dateCreated": "[AAAA-MM-DD]",
+        "dateModified": "[AAAA-MM-DD]"
+      }
+    },
+    {
+      "type": "ProductGroup",
+      "description": "Variantes de producto de e-commerce agrupadas por atributos como talla o color. Habilita resultados enriquecidos con conciencia de variantes mediante las propiedades variesBy y hasVariant.",
+      "template": {
+        "@context": "https://schema.org",
+        "@type": "ProductGroup",
+        "name": "[Nombre del producto]",
+        "description": "[Descripción del grupo de productos]",
+        "productGroupID": "[id-del-grupo-de-productos]",
+        "variesBy": ["https://schema.org/size", "https://schema.org/color"],
+        "hasVariant": [
+          {
+            "@type": "Product",
+            "name": "[Variante - Rojo, Grande]",
+            "sku": "[SKU-001]",
+            "color": "[Rojo]",
+            "size": "[Grande]",
+            "offers": {
+              "@type": "Offer",
+              "price": "[29.99]",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "ProfilePage",
+      "description": "Páginas de perfil de autor, creador o miembro del equipo. Refuerza las señales E-E-A-T con el marcado mainEntity Person y enlaces sameAs.",
+      "template": {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "mainEntity": {
+          "@type": "Person",
+          "name": "[Nombre del autor]",
+          "url": "[URL del perfil]",
+          "description": "[Bio del autor y resumen de su pericia]",
+          "sameAs": [
+            "[URL de Twitter]",
+            "[URL de LinkedIn]"
+          ]
+        }
+      }
+    },
+    {
+      "type": "Certification",
+      "description": "Certificaciones de producto (Energy Star, seguridad, orgánico, etc.). Reemplazó a EnergyConsumptionDetails en abril de 2025.",
+      "template": {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "[Nombre del producto]",
+        "hasCertification": {
+          "@type": "Certification",
+          "certificationIdentification": "[Nombre de la certificación, ej. Energy Star]",
+          "issuedBy": {
+            "@type": "Organization",
+            "name": "[Organización emisora, ej. EPA]"
+          }
+        }
+      }
+    },
+    {
+      "type": "OfferShippingDetails",
+      "description": "Información de envío y entrega para productos de e-commerce. Incluye tarifa de envío, tiempo de manipulación y tiempo de tránsito.",
+      "template": {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "[Nombre del producto]",
+        "offers": {
+          "@type": "Offer",
+          "price": "[Precio]",
+          "priceCurrency": "USD",
+          "shippingDetails": {
+            "@type": "OfferShippingDetails",
+            "shippingRate": {
+              "@type": "MonetaryAmount",
+              "value": "[0]",
+              "currency": "USD"
+            },
+            "deliveryTime": {
+              "@type": "ShippingDeliveryTime",
+              "handlingTime": {
+                "@type": "QuantitativeValue",
+                "minValue": 0,
+                "maxValue": 1,
+                "unitCode": "DAY"
+              },
+              "transitTime": {
+                "@type": "QuantitativeValue",
+                "minValue": 1,
+                "maxValue": 5,
+                "unitCode": "DAY"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}
