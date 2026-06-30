@@ -1,126 +1,191 @@
-# Skill: Accesibilidad Digital WCAG 2.2 — Banca y Retail
+# Skill de Accesibilidad Digital WCAG 2.2 — Banca y Retail
 
-Skill de auditoría de accesibilidad digital WCAG 2.2 (niveles A, AA, AAA)
-para **banca** y **retail** en el contexto normativo colombiano.
+Skill de auditoría de accesibilidad web para **banca** y **retail** en el contexto normativo colombiano. Diseñado para investigadores de UX, diseñadores de servicios, analistas de experiencia de cliente, product managers y consultores de inclusión digital.
 
-Versión 2.1 · Pragma. Soporta dos modos de ejecución: **CLI** (Claude Code
-con terminal) e **ID** (Claude Desktop / .ai, sin terminal). Es la evolución
-del prompt `auditor-accesibilidad-digital-wcag.md` (v1.0), que se conserva
-sin cambios.
+Versión 2.1 · People Center Design · Pragma
+
+---
+
+## ¿Qué hace?
+
+Realiza auditorías de accesibilidad web siguiendo el estándar internacional **WCAG 2.2** (niveles A, AA y AAA). Evalúa una URL o un flujo completo contra 87 criterios de accesibilidad, documenta cada hallazgo, lo prioriza por severidad y riesgo legal, y genera tres entregables:
+
+- **Reporte técnico** — detalle completo de hallazgos para equipos de desarrollo y QA.
+- **Reporte ejecutivo** — resumen para liderazgo y stakeholders con hallazgos críticos y riesgo legal.
+- **Declaración de conformidad** — documento formal que certifica el nivel de cumplimiento WCAG.
+
+---
+
+## ¿Cómo funciona?
+
+El skill sigue un **workflow de seis fases**:
+
+1. **Alcance** — Define qué auditar (URL, flujo, industria). Detecta automáticamente si es banca o retail y ajusta los criterios.
+2. **Auditoría automatizada** — Ejecuta verificaciones medibles (contraste de color, estructura de encabezados, etiquetas de formularios, atributos de accesibilidad).
+3. **Auditoría manual** — Revisa lo que las herramientas no detectan: navegación con teclado, compatibilidad con lectores de pantalla, claridad de instrucciones, mensajes de error.
+4. **Análisis y priorización** — Clasifica cada hallazgo combinando severidad (impacto en el usuario), esfuerzo de corrección y riesgo legal.
+5. **Generación de reportes** — Produce los tres entregables estándar.
+6. **Remediación y verificación** — Entrega recomendaciones priorizadas y define una re-auditoría.
+
+---
+
+## ¿Para qué usarlo?
+
+| Rol | Aplicación |
+|---|---|
+| **UX Researcher** | Identificar barreras en estudios de usabilidad antes de que un usuario con discapacidad las encuentre. Complementar sesiones de prueba con una visión sistemática. |
+| **Diseñador de servicios** | Validar que los flujos completos (registro, consulta, compra) sean navegables por cualquier persona. |
+| **Analista de experiencia de cliente** | Cuantificar el riesgo de exclusión digital del producto y medir su evolución. |
+| **Product Manager** | Priorizar inversión en accesibilidad con datos concretos: hallazgos documentados, severidad y riesgo legal. |
+| **Consultor de inclusión digital** | Emitir declaraciones de conformidad, preparar auditorías formales y educar a equipos sobre accesibilidad. |
+
+---
+
+## ¿Cómo se usa?
+
+1. Abre el skill en el asistente AI (Claude Code, Claude Desktop o Claude.ai).
+2. Solicita una auditoría indicando la URL o el flujo a evaluar. Ejemplos:
+   - _"Audita la página de inicio de sesión de [URL]"_
+   - _"Revisa la accesibilidad del flujo de checkout de [URL] para retail, nivel AA"_
+   - _"Necesito el reporte ejecutivo de [URL]"_
+3. El skill recupera la página, la evalúa y entrega los resultados en el formato solicitado.
+
+No requiere instalación ni configuración previa.
+
+---
+
+## ¿Cuándo usarlo?
+
+- Antes de lanzar un producto o funcionalidad
+- En cada sprint o ciclo de desarrollo
+- Durante rediseños
+- Al recibir un requerimiento legal o de compliance (SIC, SFC, MinTIC)
+- En auditorías periódicas (al menos anual)
+- Al evaluar productos de terceros o proveedores
+- En preparación de licitaciones públicas
+
+---
+
+## Modos de ejecución
+
+El skill se adapta automáticamente al entorno donde se ejecute:
+
+| Característica | Modo CLI | Modo ID |
+|---|---|---|
+| Entorno | Terminal disponible (Claude Code) | Sin terminal (Claude Desktop / .ai) |
+| Verificaciones automáticas | Ejecuta herramientas de validación | Las hace el modelo inspeccionando directamente |
+| Cálculo de contraste | Automático | Fórmula WCAG incluida en el skill |
+| Reportes | Se guardan en archivos | Se entregan dentro de la conversación |
+| Ideal para | Perfiles técnicos | Investigadores, diseñadores, PMs |
+
+No necesitas elegir un modo. El skill lo detecta al iniciar la auditoría.
+
+---
 
 ## Estructura
 
 ```
 accesibilidad-wcag/
-├── SKILL.md                         # Núcleo: orquesta la auditoría de 6 fases
+├── SKILL.md                        # Lógica principal de la auditoría (6 fases)
+├── accesibilidad-wcag.skill        # Metadatos del skill
 ├── evals/
-│   └── evals.json                   # Casos de prueba (4)
-├── references/
-│   ├── checklist-wcag-22.md         # 87 criterios con ejemplos banca/retail
-│   ├── calculo-contraste-manual.md  # Fórmula de contraste sin Python (solo ID)
-│   ├── normativa-colombiana.md      # Mapeo WCAG ↔ leyes/circulares CO
-│   ├── metodologia-evaluacion.md    # Paso a paso y técnicas POUR
+│   └── evals.json                  # Pruebas de calidad
+├── references/                     # Biblioteca de consulta
+│   ├── checklist-wcag-22.md        # Los 87 criterios WCAG con ejemplos banca/retail
+│   ├── calculo-contraste-manual.md # Fórmula de contraste (alternativa manual)
+│   ├── normativa-colombiana.md     # Mapeo WCAG ↔ leyes colombianas
+│   ├── metodologia-evaluacion.md   # Paso a paso de la auditoría
 │   ├── protocolo-lectores-pantalla.md  # NVDA, JAWS, VoiceOver, TalkBack
-│   ├── priorizacion-remediacion.md  # Matriz severidad × esfuerzo × riesgo
-│   ├── patrones-remediacion-aria.md # Código: modal, tabs, acordeón, alertas, menú
-│   ├── patrones-formularios.md      # Código: labels, errores, validación, auth
-│   ├── patrones-navegacion.md       # Código: skip link, landmarks, breadcrumb
-│   ├── presentacion-datos.md        # Código: tablas, gráficos, cifras
-│   ├── estados-aplicacion.md        # Código: carga, vacío, error, sesión
-│   ├── responsive-y-objetivos.md    # Código: reflujo, zoom, tamaño de objetivos
-│   ├── seguridad-accesible.md       # Código: auth, CSRF, XSS, CSP, timeouts
+│   ├── priorizacion-remediacion.md # Matriz severidad × esfuerzo × riesgo legal
+│   ├── patrones-remediacion-aria.md    # Corrección de componentes interactivos
+│   ├── patrones-formularios.md     # Corrección de formularios y validación
+│   ├── patrones-navegacion.md      # Corrección de navegación y estructura
+│   ├── presentacion-datos.md       # Corrección de tablas, gráficos, cifras
+│   ├── estados-aplicacion.md       # Corrección de estados de carga, error, sesión
+│   ├── responsive-y-objetivos.md   # Corrección de zoom, reflujo, objetivos táctiles
+│   ├── seguridad-accesible.md      # Corrección de autenticación y timeouts
 │   └── verticales/
-│       ├── banca.md                 # Flujos e issues de banca
-│       └── retail.md                # Flujos e issues de retail
-├── templates/
-│   ├── reporte-auditoria.html       # Reporte técnico (print-friendly)
-│   ├── reporte-ejecutivo.md         # Resumen para stakeholders
-│   └── declaracion-conformidad.md   # Conformance claim
-└── scripts/
-    ├── run_pa11y_audit.sh           # Auditoría automática con pa11y (A/AA/AAA)
-    ├── check_contrast.py            # Validador de contraste de color
-    └── validate_semantic_html.py    # Validador de estructura semántica
+│       ├── banca.md                # Flujos y problemas típicos de banca
+│       └── retail.md               # Flujos y problemas típicos de retail
+├── templates/                      # Plantillas de reportes
+│   ├── reporte-auditoria.html      # Reporte técnico detallado
+│   ├── reporte-ejecutivo.md        # Resumen para stakeholders
+│   └── declaracion-conformidad.md  # Declaración formal de conformidad
+└── scripts/                        # Herramientas de validación (solo modo CLI)
+    ├── run_pa11y_audit.sh
+    ├── check_contrast.py
+    └── validate_semantic_html.py
 ```
 
-> Las referencias se dividen en dos grupos: **evaluación** (cómo auditar:
-> checklist, normativa, metodología, protocolos, priorización, verticales)
-> y **remediación** (cómo corregir, con código: patrones ARIA, formularios,
-> navegación, datos, estados, responsive, seguridad).
+---
 
-## Uso del skill
+## Referencias del skill
 
-El agente AI debe leer `SKILL.md` y seguir el workflow de 6 fases:
-alcance → automática → manual → priorización → reporte → remediación.
-Los archivos de `references/` son material de consulta detallado.
+| Archivo | Contenido |
+|---|---|
+| `checklist-wcag-22.md` | Lista completa de los 87 criterios de accesibilidad WCAG 2.2, con ejemplos contextualizados para banca y retail. |
+| `calculo-contraste-manual.md` | Procedimiento para calcular contraste entre colores usando la fórmula WCAG, sin depender de herramientas externas. |
+| `normativa-colombiana.md` | Mapeo de las normas colombianas que exigen accesibilidad digital: Ley 1618, Circular SFC, Estatuto del Consumidor, resoluciones MinTIC, NTC 5854. |
+| `metodologia-evaluacion.md` | Metodología detallada de la auditoría: qué revisar, en qué orden, cómo documentar. |
+| `protocolo-lectores-pantalla.md` | Guía para realizar pruebas con lectores de pantalla recomendados en cada plataforma. |
+| `priorizacion-remediacion.md` | Matriz para calcular la prioridad de cada hallazgo combinando severidad, esfuerzo y riesgo legal. |
+| `patrones-remediacion-aria.md` | Guías para corregir componentes interactivos: modales, pestañas, menús, acordeones, alertas, combobox. |
+| `patrones-formularios.md` | Guías para corregir formularios: etiquetas, mensajes de error, validación, autenticación. |
+| `patrones-navegacion.md` | Guías para corregir la navegación: enlaces para saltar contenido, landmarks, migas de pan, foco. |
+| `presentacion-datos.md` | Guías para corregir la presentación de tablas, gráficos y datos numéricos. |
+| `estados-aplicacion.md` | Guías para corregir estados de carga, vacío, error, sesión y live regions. |
+| `responsive-y-objetivos.md` | Guías para corregir zoom, reflujo, orientación y tamaño mínimo de objetivos táctiles. |
+| `seguridad-accesible.md` | Guías para corregir autenticación, CAPTCHA, timeouts de sesión y manejo de errores de seguridad. |
+| `verticales/banca.md` | Problemas de accesibilidad más frecuentes en banca digital: login, transferencias, OTP, tablas de tasas, consultas de saldo. |
+| `verticales/retail.md` | Problemas de accesibilidad más frecuentes en comercio electrónico: carruseles, filtros, selección de variantes, checkout, pasarelas de pago. |
 
-## Modos de ejecución
+### Plantillas de reportes
 
-El skill se adapta al entorno donde se ejecute:
-
-| Característica | Modo CLI (Claude Code) | Modo ID (Desktop / .ai) |
+| Archivo | Destinatario | Propósito |
 |---|---|---|
-| Terminal disponible | ✅ Sí | ❌ No |
-| Scripts Python/Bash | ✅ Se ejecutan | ❌ No disponibles |
-| Cálculo de contraste | `check_contrast.py` | Fórmula manual (`calculo-contraste-manual.md`) |
-| Validación semántica | `validate_semantic_html.py` | Inspección directa del DOM |
-| Subagentes paralelos | ✅ Sí | ⚠️ Según plataforma |
-| Guardado de archivos | ✅ En disco | ❌ Entrega inline en conversación |
-| Reporte técnico | Archivo .html | HTML renderizado inline |
+| `reporte-auditoria.html` | Equipos técnicos | Todos los hallazgos con detalle completo: criterio, evidencia, justificación, prioridad. |
+| `reporte-ejecutivo.md` | Liderazgo, PMs, stakeholders | Resumen ejecutivo con hallazgos críticos, impacto en usuarios, riesgo legal y recomendaciones. |
+| `declaracion-conformidad.md` | Clientes, entes regulatorios, licitaciones | Declaración formal del nivel de conformidad con WCAG. |
 
-Detección automática al iniciar (§0.1 del SKILL.md).
+---
 
-## Scripts
+## Alcances
 
-### Python (3.8+, sin dependencias externas)
+- Evalúa sitios web y aplicaciones web (todo lo que corre en un navegador).
+- Cubre los tres niveles WCAG 2.2: A, AA y AAA (87 criterios).
+- Adaptado al contexto colombiano: normativa local, ejemplos de banca y retail, español.
+- Considera cinco tipos de usuario: discapacidad visual, cognitiva, auditiva, motriz y múltiple.
+- Genera los tres entregables estándar de una auditoría profesional.
+- Evalúa URLs individuales o flujos completos (múltiples páginas).
+- No requiere instalación.
 
-```bash
-# Contraste de color (--json para CI, exit 1 si no cumple AA)
-python scripts/check_contrast.py --fg "#333333" --bg "#FFFFFF"
-python scripts/check_contrast.py --tokens tokens.css --report contraste.html
-python scripts/check_contrast.py --fg "#999" --bg "#fff" --json
+## Limitaciones
 
-# Estructura semántica HTML
-python scripts/validate_semantic_html.py --url https://ejemplo.com
-python scripts/validate_semantic_html.py --file index.html --report sem.html
-```
+- Solo aplicaciones web. No audita aplicaciones móviles nativas (iOS/Android), aunque las PWAs sí entran en alcance.
+- Las verificaciones automáticas cubren ~30-40% de los criterios. La auditoría manual del skill compensa esta brecha, pero la verificación con usuarios reales y tecnologías de asistencia sigue siendo necesaria para declarar conformidad total.
+- El cálculo de contraste puede tener diferencias mínimas frente a herramientas especializadas. Para certificación formal, se recomienda usar Colour Contrast Analyzer u otra herramienta estándar.
+- Las pruebas con lectores de pantalla deben ejecutarlas un humano con el lector instalado. El skill describe qué probar y cómo, pero no las ejecuta.
+- La normativa citada debe verificarse en su versión vigente. El skill ofrece el mapa normativo basado en la información disponible, pero no reemplaza el consejo legal.
+- No evalúa accesibilidad de contenido descargable (PDFs, documentos Office) ni de multimedia (audio, video) más allá de verificar alternativas textuales.
 
-> En consolas de Windows, los scripts Python reconfiguran la salida a UTF-8
-> automáticamente para mostrar el semáforo (✅ ⚠️ ❌).
+---
 
-### Auditoría automática con pa11y (requiere Node.js 18+)
+## Normatividad colombiana aplicable
 
-```bash
-# Ejecutar desde Git Bash en Windows. La primera vez descarga Chromium.
-bash scripts/run_pa11y_audit.sh --standard WCAG2AAA https://ejemplo.com
-bash scripts/run_pa11y_audit.sh --urls urls.txt --report reporte.json
-```
+| Norma | Año | Exigencia principal |
+|---|---|---|
+| **Ley 1346** | 2009 | Ratifica la Convención de la ONU: el acceso a la información y las TIC es un derecho de las personas con discapacidad. |
+| **Ley 1618** | 2013 | Disposiciones para garantizar el pleno ejercicio de los derechos de personas con discapacidad, incluida la accesibilidad digital. |
+| **Ley 1680** | 2013 | Garantiza a personas ciegas y con baja visión el acceso a la información, comunicaciones y TIC. |
+| **Circular Externa SFC** | 2022 | Exige que los canales digitales de entidades vigiladas por la Superintendencia Financiera sean accesibles e inclusivos. |
+| **Ley 1480 — Estatuto del Consumidor** | 2011 | Exige información clara, veraz y suficiente en comercio electrónico. Una barrera de accesibilidad puede vulnerar este derecho. |
+| **Res. MinTIC 1519/2020 y 1239/2022** | 2020-2022 | Adoptan WCAG 2.1 nivel AA como estándar obligatorio para sitios del Estado colombiano. |
+| **NTC 5854 (Icontec)** | 2011 | Norma técnica colombiana de accesibilidad web alineada con WCAG. |
 
-> pa11y (motor HTML_CodeSniffer) detecta ~30-40% de los issues; complementa
-> siempre con revisión manual (teclado + lector de pantalla).
+El detalle completo, incluyendo sanciones y alcance de cada norma, está en `references/normativa-colombiana.md`.
 
-## Sin instalación ni configuración obligatoria
-
-El skill produce un informe **completo sin instalar nada**: el modelo
-recupera el HTML y lo evalúa contra el checklist y las guías. Los scripts
-son **opcionales** y solo aplican en **Modo CLI**:
-
-- Python (`check_contrast.py`, `validate_semantic_html.py`): solo si ya
-  tienes Python; usan únicamente la biblioteca estándar.
-- `run_pa11y_audit.sh`: solo si ya tienes Node.js; si no, se omite y el
-  informe lo indica. **No hace falta instalarlo.**
-
-En **Modo ID** (sin terminal): el skill sigue siendo autocontenido. El
-contraste se calcula con la fórmula WCAG (`calculo-contraste-manual.md`)
-y la validación semántica se hace inspeccionando el HTML directamente.
-
-## Alcance y limitaciones
-
-- Solo accesibilidad **web** (no mobile nativo iOS/Android).
-- Las herramientas automáticas cubren ~30-40% de los criterios y **no**
-  sustituyen la revisión manual con teclado y lectores de pantalla.
-- La normativa colombiana citada debe verificarse en su versión vigente
-  (ver `references/normativa-colombiana.md`).
+---
 
 ## Licencia
 
-Propiedad de Pragma. Uso interno y confidencial — ver `LICENSE`.
+Propiedad de **Pragma**. Uso interno y confidencial — ver `LICENSE`.
