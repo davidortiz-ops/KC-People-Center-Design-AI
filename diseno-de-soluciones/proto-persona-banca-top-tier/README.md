@@ -1,35 +1,19 @@
----
-name: proto-persona-banca-top-tier
-description: >
-  Proto-persona de referencia para el segmento de clientes bancarizados de altos ingresos
-  y alto patrimonio (Top Tier) en la región. Diseñada para validar usabilidad, evaluar
-  interacción del usuario con el producto digital, y contextualizar evaluaciones heurísticas,
-  auditorías de accesibilidad y sesiones de diseño. Actívala cuando el usuario mencione:
-  proto-persona, cliente top tier, banca premium, cliente de altos ingresos, high net worth,
-  wealth management, cliente clase alta, usuario banca privada, segmento ABC1, perfil de
-  usuario bancario. No es un agente ejecutable — es un insumo de referencia.
-license: Proprietary — Pragma (uso interno y confidencial)
-metadata:
-  version: "1.0"
-  author: Pragma
----
+# Proto-Persona: Cliente Bancario Top Tier — Evaluador desde la Perspectiva del Usuario Premium
 
-# Proto-Persona: Cliente Bancario Top Tier — Banca y Servicios Financieros
-
-Referencia de proto-persona para validación de usabilidad y experiencia de usuario en el segmento de clientes bancarizados de altos ingresos y alto patrimonio. Diseñada para equipos de UX, diseño de servicios, investigación y producto que necesitan un perfil de usuario realista para evaluar productos digitales bancarios.
+Skill de evaluación de experiencia digital bancaria desde la perspectiva del cliente de altos ingresos y alto patrimonio (Top Tier). El modelo actúa como este usuario para evaluar interfaces, flujos y funcionalidades, generar behavioral insights, e integrarse con otros skills (Heuristy, Tognazzini, accesibilidad) para reinterpretar hallazgos desde la perspectiva del segmento premium.
 
 Versión 1.0 · People Center Design · Pragma
 
 ---
 
-## ¿Qué es?
+## ¿Qué hace?
 
-Esta proto-persona representa al cliente bancarizado de altos ingresos y alto patrimonio (Top Tier) de la región. No es un agente ejecutable ni un evaluador — es un **insumo de referencia** para:
+Este skill transforma al modelo en un **evaluador que piensa, siente y reacciona como un cliente bancario Top Tier**. No es solo un perfil de referencia estático — es un agente que:
 
-- Contextualizar evaluaciones heurísticas y de accesibilidad
-- Alimentar la definición de user personas en proyectos de banca digital
-- Validar decisiones de diseño desde la perspectiva del segmento premium
-- Preparar sesiones de testing con usuarios reales de banca Top Tier
+- Evalúa interfaces, flujos y productos **actuando como el persona**, emitiendo juicios en primera persona.
+- Genera **behavioral insights** sobre comportamientos, motivaciones y puntos de fricción del segmento de altos ingresos.
+- Se **integra con otros skills** (Heuristy, Tognazzini, accesibilidad WCAG) para reinterpretar hallazgos desde la perspectiva premium.
+- Produce un **Top Tier Experience Score (TTES)** que mide qué tan preparada está una experiencia digital para este segmento.
 
 ---
 
@@ -37,36 +21,75 @@ Esta proto-persona representa al cliente bancarizado de altos ingresos y alto pa
 
 | Rol | Aplicación |
 |---|---|
-| **UX Researcher** | Contexto de entrada para evaluaciones heurísticas y pruebas de usabilidad en canales digitales bancarios premium. |
-| **Service Designer** | Validar que los flujos de onboarding, consulta y transacciones respondan a las expectativas del segmento de alto patrimonio. |
-| **Product Manager** | Asegurar que las funcionalidades prioritarias del producto digital bancario cubran las necesidades reales del cliente Top Tier. |
-| **CX Analyst** | Identificar puntos de fricción específicos del segmento premium en la experiencia omnicanal. |
+| **UX Researcher** | Evaluar prototipos y productos existentes desde la perspectiva del segmento de alto valor antes de pruebas con usuarios reales. |
+| **Service Designer** | Validar flujos completos (onboarding, transferencias, wealth management) contra las expectativas de un cliente premium. |
+| **Product Manager** | Priorizar funcionalidades según el impacto real en la retención del segmento Top Tier. |
+| **CX Analyst** | Identificar fricciones específicas del segmento premium que no capturan las evaluaciones genéricas. |
 | **Diseñador de servicios** | Contrastar soluciones de diseño contra un perfil de usuario con alta exigencia y baja tolerancia a la fricción. |
+
+---
+
+## ¿Cómo funciona?
+
+El skill opera en **tres modos**:
+
+### Modo 1: Evaluación directa como persona
+El modelo adopta el rol del cliente Top Tier y evalúa una interfaz, flujo o funcionalidad desde su perspectiva. Responde en primera persona, documenta hallazgos con severidad, calcula el TTES y entrega recomendaciones.
+
+### Modo 2: Behavioral Insights
+El modelo analiza comportamientos del segmento Top Tier a partir del contexto que el usuario proporciona. Explica qué espera, qué valora y qué rechaza este segmento en cada situación.
+
+### Modo 3: Integración con otros skills
+El modelo se acopla a otros skills (Heuristy, Tognazzini, accesibilidad) y reinterpreta cada hallazgo desde la perspectiva del cliente Top Tier. Ajusta severidad, impacto y prioridad según cómo los experimentaría este usuario.
+
+### Workflow general
+
+1. El usuario activa el skill con el contexto de evaluación.
+2. El modelo solicita datos faltantes (URL, flujo, producto, alcance).
+3. Activa el perfil completo del cliente Top Tier.
+4. Evalúa aplicando los 6 criterios desde la perspectiva del persona.
+5. Calcula el TTES y genera el reporte correspondiente.
 
 ---
 
 ## ¿Cómo se usa?
 
-1. Carga este skill en el asistente AI.
-2. Úsalo como contexto previo a una evaluación heurística, auditoría de accesibilidad o sesión de diseño.
-3. El asistente incorporará el perfil del usuario Top Tier en sus evaluaciones y recomendaciones.
+1. Activa el skill mencionando una evaluación desde la perspectiva del cliente Top Tier.
+2. Proporciona el contexto: URL, flujo, producto bancario y tipo de evaluación.
+3. El modelo evalúa y entrega resultados con TTES, hallazgos y recomendaciones.
 
 Ejemplos de activación:
-- _"Usa la proto-persona de banca Top Tier para contextualizar la evaluación heurística del login"_
-- _"Teniendo en cuenta el perfil del cliente Top Tier, evalúa el flujo de transferencia internacional"_
-- _"Necesito validar el dashboard patrimonial contra el perfil de la proto-persona de banca Top Tier"_
+- _"Evalúa el login de [URL] como si fuera un cliente Top Tier"_
+- _"Dame behavioral insights sobre cómo un cliente de altos ingresos usa la banca móvil"_
+- _"Ejecuta Heuristy sobre el flujo de transferencias y reinterpreta los hallazgos como cliente premium"_
 
-No requiere instalación. El contenido completo de la proto-persona está en este mismo documento.
+No requiere instalación.
+
+---
+
+## Modos de ejecución
+
+| Característica | Modo ID (Desktop / .ai) | Modo CLI |
+|---|---|---|
+| Entorno | Sin terminal (Claude Desktop, Claude.ai) | Terminal disponible (Claude Code) |
+| Evaluación directa como persona | El modelo adopta el rol y entrega reporte en la conversación | Misma capacidad, sin scripts adicionales |
+| Behavioral Insights | Análisis completo dentro del chat | Misma capacidad |
+| Integración con otros skills | El modelo reinterpreta hallazgos de otros skills en la conversación | Misma capacidad |
+| Top Tier Experience Score | Cálculo manual incluido en el skill | Misma capacidad |
+| Ideal para | UX Researchers, diseñadores, PMs, analistas CX | Mismos roles, cuando ya se usa Claude Code |
+
+El skill se adapta automáticamente al entorno. No necesita scripts ni herramientas externas.
 
 ---
 
 ## ¿Cuándo usarlo?
 
-- Antes de iniciar una evaluación heurística de un producto bancario digital
-- En sesiones de diseño y prototipado de funcionalidades para banca premium
-- Durante la definición de user personas para proyectos de banca
-- Al preparar guiones de prueba con usuarios del segmento de altos ingresos
-- En revisiones de producto donde se necesite un perfil de usuario con alta exigencia
+- Antes de lanzar una funcionalidad bancaria dirigida al segmento premium
+- Durante el diseño y prototipado de productos de banca exclusiva
+- Para validar que una evaluación heurística estándar captura las necesidades del segmento de altos ingresos
+- Al preparar guiones de prueba con usuarios reales del segmento Top Tier
+- En revisiones periódicas de la experiencia digital para banca premium
+- Cuando se necesita entender comportamientos y motivaciones del segmento de alto patrimonio
 
 ---
 
@@ -183,9 +206,21 @@ Para decisiones complejas o estratégicas combina canales digitales con asesorí
 
 ```
 proto-persona-banca-top-tier/
-├── README.md       # Contenido completo de la proto-persona (este archivo)
-└── LICENSE         # Licencia propietaria de Pragma
+├── README.md       # Documentación y perfil completo del persona
+├── SKILL.md        # Lógica principal: evaluación, behavioral insights e integración
+├── LICENSE         # Licencia propietaria de Pragma
+└── evals/
+    └── evals.json  # Pruebas de calidad del skill
 ```
+
+---
+
+## Referencias del skill
+
+| Archivo | Contenido |
+|---|---|
+| `SKILL.md` | Lógica principal: workflow de evaluación, 6 criterios, escala de severidad, TTES, modo integración con otros skills, behavioral insights, restricciones y solicitudes sugeridas. |
+| `README.md` | Documentación completa: qué hace, cómo se usa, perfil del usuario, relación con la banca, objetivos, expectativas, fricciones, criterios de confianza, lenguaje, límites y alcances. |
 
 ---
 
@@ -194,8 +229,9 @@ proto-persona-banca-top-tier/
 - Cubre el segmento de cliente bancario de altos ingresos (1-5% superior) en la región (Brasil, Chile, Paraguay, Uruguay).
 - Aplica para banca digital: web, móvil y canales de atención al cliente premium.
 - Considera el contexto latinoamericano: volatilidad económica, regulación local, bimonetarismo.
-- Compatible como insumo para evaluaciones heurísticas (Heuristy, Tognazzini) y auditorías de accesibilidad WCAG.
+- Compatible como evaluador autónomo y como filtro de integración con otros skills (Heuristy, Tognazzini, accesibilidad WCAG).
 - Contiene frases textuales representativas del segmento para guiones de prueba y validación de tono de voz.
+- Genera Top Tier Experience Score (TTES) basado en 6 dimensiones de evaluación.
 
 ## Limitaciones
 
@@ -206,6 +242,8 @@ proto-persona-banca-top-tier/
 - No incluye variaciones por país más allá de la nomenclatura de clase socioeconómica.
 - El perfil asume alfabetización digital alta. No cubre perfiles con baja exposición a tecnología.
 - No reemplaza un estudio de usuarios reales. Es un punto de partida para alinear al equipo.
+- El modo integración con otros skills requiere que el usuario invoque ambos skills explícitamente.
+- Los scripts CLI no están implementados. El skill opera exclusivamente en modo ID (conversacional).
 
 ---
 
