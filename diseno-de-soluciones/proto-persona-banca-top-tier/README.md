@@ -72,13 +72,17 @@ No requiere instalación.
 | Característica | Modo ID (Desktop / .ai) | Modo CLI |
 |---|---|---|
 | Entorno | Sin terminal (Claude Desktop, Claude.ai) | Terminal disponible (Claude Code) |
-| Evaluación directa como persona | El modelo adopta el rol y entrega reporte en la conversación | Misma capacidad, sin scripts adicionales |
-| Behavioral Insights | Análisis completo dentro del chat | Misma capacidad |
-| Integración con otros skills | El modelo reinterpreta hallazgos de otros skills en la conversación | Misma capacidad |
-| Top Tier Experience Score | Cálculo manual incluido en el skill | Misma capacidad |
-| Ideal para | UX Researchers, diseñadores, PMs, analistas CX | Mismos roles, cuando ya se usa Claude Code |
+| Evaluación directa como persona | El modelo adopta el rol y entrega reporte en la conversación | El modelo adopta el rol y entrega reporte en la conversación |
+| Behavioral Insights | Análisis completo dentro del chat | Análisis completo dentro del chat |
+| Integración con otros skills | El modelo reinterpreta hallazgos en la conversación | El modelo reinterpreta hallazgos en la conversación |
+| Top Tier Experience Score | El modelo lo calcula manualmente en el chat | Se puede calcular con `calculate_tte_score.py` desde hallazgos JSON |
+| Extracción de insights | El modelo los genera en la conversación | Se puede ejecutar `extract_insights.py` desde hallazgos JSON |
+| Validación de hallazgos | El modelo valida en el chat contra el perfil | Se puede ejecutar `validate_persona_findings.py` |
+| Evals / pruebas de calidad | No aplica (modo conversacional) | Se pueden ejecutar con `evals/evals.json` |
+| Uso de scripts | No usa scripts. Todo es conversacional | Usa scripts Python (stdlib) para procesar hallazgos JSON |
+| Ideal para | UX Researchers, diseñadores, PMs, analistas CX | Perfiles técnicos que trabajan con hallazgos estructurados en JSON |
 
-El skill se adapta automáticamente al entorno. No necesita scripts ni herramientas externas.
+El modelo detecta automáticamente el entorno. En modo ID opera sin scripts (todo conversacional). En modo CLI los scripts están disponibles para automatizar el cálculo de TTES, la extracción de insights y la validación de hallazgos desde archivos JSON.
 
 ---
 
@@ -254,8 +258,9 @@ proto-persona-banca-top-tier/
 - El perfil asume alfabetización digital alta. No cubre perfiles con baja exposición a tecnología.
 - No reemplaza un estudio de usuarios reales. Es un punto de partida para alinear al equipo.
 - El modo integración con otros skills requiere que el usuario invoque ambos skills explícitamente.
-- Los scripts CLI requieren Python 3.8+ y solo usan biblioteca estándar. No necesitan instalación de dependencias.
+- Los scripts CLI requieren Python 3.8+ y solo usan biblioteca estándar. No necesitan instalación de dependencias. Aplican solo en modo CLI.
 - El modo CLI requiere que los hallazgos estén documentados en formato JSON siguiendo `scripts/findings_template.json`.
+- En modo ID (Desktop / .ai) los scripts no se usan. Todo el skill opera conversacionalmente: el modelo adopta el rol del persona, evalúa, calcula TTES, extrae insights y valida hallazgos dentro del chat.
 
 ---
 
