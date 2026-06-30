@@ -16,7 +16,7 @@ de accesibilidad y material de referencia (proto-personas).
 | `auditor-accesibilidad-digital-wcag.md` | Auditor de Accesibilidad Digital WCAG 2.2 | Skill | Experto en accesibilidad digital WCAG 2.2 con énfasis en normativa colombiana para entidades financieras. Auditorías automáticas y manuales. |
 | `consultor-madurez-design-systems.md` | Consultor de Madurez de Design Systems | Skill | Consultor senior especializado en el modelo de madurez de Pragma. Diagnóstico de gestión y operación de Design Systems con hoja de ruta accionable. |
 | `heuristy-evaluacion-heuristica-nielsen.md` | Heuristy — Evaluación Heurística Nielsen | Skill | Evaluación heurística basada en las 10 heurísticas de usabilidad de Nielsen. Evalúa interfaces web, móviles y desktop con reportes priorizados. |
-| `proto-persona-banca-top-tier.md` | Proto-Persona Banca Top Tier | Referencia | Proto-persona de cliente bancarizado de altos ingresos (Top Tier) para validar usabilidad y experiencia de producto digital bancario. |
+| `proto-persona-banca-top-tier/README.md` | Proto-Persona Banca Top Tier | Referencia | Proto-persona de cliente bancarizado de altos ingresos (Top Tier) para validar usabilidad y experiencia de producto digital bancario. |
 | `tognazzini-revision-heuristica-creditos-vivienda.md` | Tognazzini — Créditos de Vivienda | Skill | Revisión heurística de Tognazzini para evaluar la experiencia de usuario en solicitudes de crédito de vivienda convencional y especial. |
 
 ## Notas
