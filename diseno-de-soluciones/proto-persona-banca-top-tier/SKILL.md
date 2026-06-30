@@ -66,6 +66,20 @@ Antes de iniciar cualquier modo, captura estos datos del usuario:
 - **Contexto adicional:** ¿Hay información complementaria? (segmento de cliente específico, país, normativa, campaña activa)
 - **Entrega esperada:** ¿Reporte detallado, resumen ejecutivo, lista de hallazgos críticos?
 
+### Enriquecimiento dinámico del perfil
+
+Si el usuario solicita una evaluación para un contexto que el perfil actual del persona no cubre adecuadamente (por ejemplo: un país específico no listado, un producto financiero no documentado, un canal no contemplado, o un perfil demográfico fuera del rango definido), el modelo debe:
+
+1. **Identificar la brecha** — Explicitar qué información del perfil actual es insuficiente para el contexto solicitado.
+2. **Solicitar datos específicos** — Pedir al usuario la información necesaria para enriquecer el perfil de forma temporal (para esta evaluación). Ejemplos:
+   - "El perfil actual está definido para Brasil, Chile, Paraguay y Uruguay. Mencionaste Perú. ¿Cuál es el contexto normativo o de mercado que debería considerar?"
+   - "El persona cubre banca digital web y móvil. Mencionaste un cajero automático. ¿Qué características de ese canal son relevantes para tu evaluación?"
+   - "El rango etario del persona es 40-60 años. Mencionaste un perfil más joven. ¿Quieres ajustar temporalmente el perfil o usar el rango definido?"
+3. **Adaptar la evaluación** — Incorporar la información proporcionada por el usuario como extensión temporal del perfil para esa evaluación específica.
+4. **Documentar la adaptación** — Incluir en el reporte una nota sobre las adaptaciones realizadas al perfil original para ese contexto.
+
+Esta adaptación es temporal y específica para la evaluación en curso. El perfil base definido en `README.md` permanece inalterado.
+
 ---
 
 ## Escala: Top Tier Experience Score
@@ -274,6 +288,39 @@ Cuando las funcionalidades "premium" son cosméticas sin valor real. Cruza Exclu
 - Confundir este segmento con Ultra High Net Worth (family offices). Son perfiles distintos.
 - Recomendar soluciones que eliminen el contacto humano. El persona valora la relación con su ejecutivo.
 - Usar un tono que no corresponda al perfil (demasiado informal, demasiado técnico, demasiado servil).
+
+---
+
+## Scripts CLI
+
+El skill incluye 3 scripts Python para identificar insights desde hallazgos estructurados. Todos usan solo biblioteca estándar (Python 3.8+) y requieren que los hallazgos estén documentados en formato JSON siguiendo `scripts/findings_template.json`.
+
+### `calculate_tte_score.py`
+Calcula el Top Tier Experience Score (TTES) a partir de un archivo JSON con hallazgos. Genera reporte con scores global y por dimensión, distribución de severidad, detección de patrones transversales e insights.
+
+```
+python scripts/calculate_tte_score.py hallazgos.json
+python scripts/calculate_tte_score.py hallazgos.json --output reporte.md
+python scripts/calculate_tte_score.py hallazgos.json --json
+```
+
+### `extract_insights.py`
+Analiza hallazgos para identificar patrones de comportamiento del segmento Top Tier. Cruza los hallazgos con el perfil del persona (objetivos financieros, fricciones, criterios de confianza) y genera insights conductuales, priorización de acciones y recomendaciones con frases textuales.
+
+```
+python scripts/extract_insights.py hallazgos.json
+python scripts/extract_insights.py hallazgos.json --output insights.md
+python scripts/extract_insights.py hallazgos.json --json
+```
+
+### `validate_persona_findings.py`
+Valida que los hallazgos sean consistentes con el perfil del cliente Top Tier. Verifica que la descripción use la voz del persona (primera persona), que las dimensiones correspondan al contenido, y que las severidades sean coherentes. Incluye modo `--strict` y `--fix` para corrección automática.
+
+```
+python scripts/validate_persona_findings.py hallazgos.json
+python scripts/validate_persona_findings.py hallazgos.json --strict
+python scripts/validate_persona_findings.py hallazgos.json --fix corregido.json
+```
 
 ---
 

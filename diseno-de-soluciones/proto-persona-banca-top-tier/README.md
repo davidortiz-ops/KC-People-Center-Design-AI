@@ -206,11 +206,17 @@ Para decisiones complejas o estratégicas combina canales digitales con asesorí
 
 ```
 proto-persona-banca-top-tier/
-├── README.md       # Documentación y perfil completo del persona
-├── SKILL.md        # Lógica principal: evaluación, behavioral insights e integración
-├── LICENSE         # Licencia propietaria de Pragma
-└── evals/
-    └── evals.json  # Pruebas de calidad del skill
+├── README.md         # Documentación y perfil completo del persona (archivo fundacional)
+├── SKILL.md          # Lógica principal: evaluación, behavioral insights e integración
+├── LICENSE           # Licencia propietaria de Pragma
+├── evals/
+│   └── evals.json    # Pruebas de calidad del skill
+└── scripts/          # Scripts CLI para identificación de insights
+    ├── findings_template.json     # Plantilla JSON para documentar hallazgos
+    ├── sample-findings.json       # Ejemplo completo de hallazgos (7 hallazgos)
+    ├── calculate_tte_score.py     # Calcula TTES desde hallazgos estructurados
+    ├── extract_insights.py        # Identifica patrones y genera insights conductuales
+    └── validate_persona_findings.py # Valida hallazgos contra el perfil del persona
 ```
 
 ---
@@ -220,7 +226,12 @@ proto-persona-banca-top-tier/
 | Archivo | Contenido |
 |---|---|
 | `SKILL.md` | Lógica principal: workflow de evaluación, 6 criterios, escala de severidad, TTES, modo integración con otros skills, behavioral insights, restricciones y solicitudes sugeridas. |
-| `README.md` | Documentación completa: qué hace, cómo se usa, perfil del usuario, relación con la banca, objetivos, expectativas, fricciones, criterios de confianza, lenguaje, límites y alcances. |
+| `README.md` | Documentación completa: qué hace, cómo se usa, perfil del usuario, relación con la banca, objetivos, expectativas, fricciones, criterios de confianza, lenguaje, límites y alcances. **Archivo fundacional** — todo el skill se basa en este perfil. |
+| `scripts/calculate_tte_score.py` | Calcula el Top Tier Experience Score a partir de hallazgos estructurados. Genera reporte con scores por dimensión, distribución de severidad, detección de patrones transversales e insights. |
+| `scripts/extract_insights.py` | Analiza hallazgos para identificar patrones de comportamiento del segmento Top Tier. Genera insights conductuales, priorización de acciones y recomendaciones desde la perspectiva del persona. |
+| `scripts/validate_persona_findings.py` | Valida que los hallazgos sean consistentes con el perfil del cliente Top Tier. Detecta voz genérica, dimensiones mal asignadas y severity inconsistentes. |
+| `scripts/findings_template.json` | Plantilla JSON con la estructura esperada para documentar hallazgos de evaluación. |
+| `scripts/sample-findings.json` | Ejemplo realista con 7 hallazgos para un flujo de transferencia internacional bancaria. |
 
 ---
 
@@ -243,7 +254,8 @@ proto-persona-banca-top-tier/
 - El perfil asume alfabetización digital alta. No cubre perfiles con baja exposición a tecnología.
 - No reemplaza un estudio de usuarios reales. Es un punto de partida para alinear al equipo.
 - El modo integración con otros skills requiere que el usuario invoque ambos skills explícitamente.
-- Los scripts CLI no están implementados. El skill opera exclusivamente en modo ID (conversacional).
+- Los scripts CLI requieren Python 3.8+ y solo usan biblioteca estándar. No necesitan instalación de dependencias.
+- El modo CLI requiere que los hallazgos estén documentados en formato JSON siguiendo `scripts/findings_template.json`.
 
 ---
 
