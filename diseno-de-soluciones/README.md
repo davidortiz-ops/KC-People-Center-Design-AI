@@ -3,14 +3,15 @@
 > Chapter de **People Center Design - Pragma**.
 
 Artefactos para la fase de **diseño de soluciones**: evaluación de usabilidad,
-accesibilidad, experiencia conductual y madurez de design systems. Incluye skills
-estructurados (con carpeta, scripts y evals) y skills planos (archivo único).
+accesibilidad, experiencia conductual, madurez de design systems y
+especificación de componentes. Incluye skills estructurados (con carpeta,
+evals y opcionalmente scripts) y skills planos (archivo único).
 
 ---
 
 ## Qué tiene
 
-**6 artefactos** organizados en tres categorías:
+**7 artefactos** organizados en cuatro categorías:
 
 ### Skills de usabilidad y accesibilidad
 
@@ -18,7 +19,13 @@ estructurados (con carpeta, scripts y evals) y skills planos (archivo único).
 |-----------|------|---------|-------------------------|
 | **Heuristy — Evaluación Heurística Nielsen** | Skill estructurado | 2.0 | Identifica problemas de usabilidad en interfaces digitales usando las 10 heurísticas de Nielsen + 4 extensiones para banca/retail. Genera score global, matriz de priorización y roadmap. |
 | **Accesibilidad Digital WCAG 2.2** | Skill estructurado | 2.0 | Audita sitios web contra los 87 criterios WCAG 2.2 (A, AA, AAA). Detecta barreras de acceso, calcula contraste, verifica lectores de pantalla. Adaptado a normativa colombiana. |
-| **Tognazzini — Créditos de Vivienda** | Skill plano | 1.0 | Evalúa la experiencia de usuario en solicitudes de crédito de vivienda aplicando las 16 heurísticas de Bruce Tognazzini. Enfocado en flujos completos, no solo interfaz. |
+| **Tognazzini — Créditos de Vivienda** | Skill estructurado | 2.0 | Evalúa la experiencia de usuario en solicitudes de crédito de vivienda (canales digitales y presenciales) aplicando las 16 heurísticas de Bruce Tognazzini. Genera Puntuación General, ranking de hallazgos por prioridad y roadmap. |
+
+### Skills de especificación de sistemas de diseño
+
+| Artefacto | Tipo | Versión | ¿Qué problema resuelve? |
+|-----------|------|---------|-------------------------|
+| **Contratos de Diseño** | Skill estructurado | 1.0 | Convierte piezas de UI en contratos YAML validados contra los tokens del sistema de diseño del usuario, y los empaqueta como proyecto portable que cualquier IA interpreta y genera igual. |
 
 ### Skills de evaluación conductual y organizacional
 
@@ -42,6 +49,7 @@ estructurados (con carpeta, scripts y evals) y skills planos (archivo único).
 | Heuristy | Necesites una auditoría rápida de usabilidad antes de un lanzamiento. Quieras priorizar problemas de UX con datos (severidad, impacto, esfuerzo). Trabajes en banca digital o e-commerce y necesites cubrir normativa. |
 | Accesibilidad WCAG | Te exijan cumplimiento legal de accesibilidad (Circular SFC, Ley 1618, MinTIC). Quieras certificar nivel A/AA/AAA. Necesites reportes técnicos + ejecutivos + declaración de conformidad. |
 | Tognazzini | Estés diseñando o auditando el flujo de crédito de vivienda. Necesites una evaluación centrada en la experiencia del usuario, no solo en la interfaz. |
+| Contratos de Diseño | Necesites especificar una pieza de UI para que cualquier IA la genere igual. Quieras estandarizar cómo se documentan los componentes de tu design system contra tokens reales. |
 | Proto-Persona Top Tier | Quieras validar que tu producto bancario cumple las expectativas del segmento premium. Necesites behavioral insights del cliente de altos ingresos. Quieras reinterpretar hallazgos de otros skills desde la perspectiva Top Tier. |
 | Consultor Madurez DS | Necesites diagnosticar el estado actual de tu Design System. Quieras una hoja de ruta para evolucionarlo. Estés en una organización que busca estandarizar su DS. |
 | Lineamientos Skills | Vayas a crear un skill nuevo en este chapter. Necesites saber la estructura obligatoria, el formato de frontmatter o los estándares de scripts Python. |
@@ -70,7 +78,8 @@ Cada skill opera en **dos modos** que se detectan automáticamente:
 |-------|----------------------|------------------------|
 | Heuristy | _"Evalúa heurísticamente el flujo de login de [URL]"_, _"Haz una auditoría UX del checkout de [URL] para retail"_ | `python scripts/calculate_score.py hallazgos.json`, `python scripts/generate_report.py hallazgos.json` |
 | Accesibilidad WCAG | _"Audita la accesibilidad de [URL] nivel AA"_, _"Revisa el contraste de color de [URL]"_ | `python scripts/check_contrast.py --foreground #fff --background #000` |
-| Tognazzini | _"Evalúa el flujo de solicitud de crédito de vivienda de [URL] usando heurísticas de Tognazzini"_ | No tiene scripts (skill plano) |
+| Tognazzini | _"Evalúa el flujo de solicitud de crédito de vivienda de [URL] usando heurísticas de Tognazzini"_ | `python scripts/calculate_score.py hallazgos.json`, `python scripts/generate_report.py hallazgos.json` |
+| Contratos de Diseño | _"Aquí están mis tokens, necesito el contrato de este botón"_, _"Valida este YAML de contrato"_ | No tiene scripts (no requiere cómputo, mismo flujo que en modo ID) |
 | Proto-Persona Top Tier | _"Evalúa el login de [URL] como cliente Top Tier"_, _"Dame behavioral insights sobre wealth management"_ | `python scripts/calculate_tte_score.py hallazgos.json`, `python scripts/extract_insights.py hallazgos.json` |
 | Consultor Madurez DS | _"Necesito un test de madurez de mi Design System"_, _"Diagnostica la gestión y operación de mi DS"_ | No tiene scripts (skill plano) |
 
@@ -149,8 +158,28 @@ diseno-de-soluciones/
 │   ├── evals/evals.json                         # Pruebas de calidad
 │   └── scripts/                                 # 3 scripts + 2 plantillas JSON
 │
+├── tognazzini-revision-heuristica-creditos-vivienda/  # Skill estructurado
+│   ├── SKILL.md                                 # Lógica principal
+│   ├── README.md                                # Documentación
+│   ├── LICENSE                                  # Licencia Pragma
+│   ├── evals/evals.json                         # Pruebas de calidad
+│   └── scripts/                                 # 3 scripts + 2 plantillas JSON
+│
+├── contratos-de-diseno/                         # Skill estructurado (sin scripts)
+│   ├── SKILL.md                                 # Lógica principal (tokens → ficha → compilar → validar)
+│   ├── README.md                                # Documentación
+│   ├── LICENSE                                  # Licencia Pragma
+│   ├── evals/evals.json                         # Pruebas de calidad
+│   ├── assets/harness.txt                       # Reglas de pintado del paquete de proyecto
+│   ├── references/                              # 8 referencias + 2 contratos canónicos
+│   │   ├── tokens.md, ficha.md, esqueleto.md    # Paso 0, 1 y 2
+│   │   ├── mapa-semantico.md, ejemplo.md        # Apoyo a compilación
+│   │   ├── validacion.md                        # Checklist de 7 puntos
+│   │   ├── descomposicion.md, proyecto.md       # Modo página completa y modo paquete
+│   │   └── canonico-*.yaml                      # 2 contratos reales de referencia
+│   └── contratos-de-diseno.skill                # Paquete .skill del artefacto
+│
 ├── consultor-madurez-design-systems.md          # Skill plano
-├── tognazzini-revision-heuristica-creditos-vivienda.md  # Skill plano
 ├── lineamientos-skills.md                       # Guía de estándares
 └── README.md                                    # Este archivo
 ```
@@ -165,6 +194,7 @@ diseno-de-soluciones/
 | Heuristy / Tognazzini + Proto-Persona Top Tier | El skill base evalúa técnicamente; la proto-persona reinterpreta cada hallazgo desde la perspectiva del cliente premium. Ajusta severidad y prioridad según cómo los experimenta este segmento. |
 | Proto-Persona Top Tier + Accesibilidad WCAG | Evalúa la accesibilidad desde la perspectiva de un usuario de altos ingresos con posibles discapacidades o preferencias de accesibilidad. |
 | Consultor Madurez DS + Proto-Persona Top Tier | Evalúa si la madurez del Design System soporta adecuadamente las necesidades del segmento premium. |
+| Consultor Madurez DS + Contratos de Diseño | Diagnostica la madurez del Design System y, una vez tiene tokens documentados, especifica sus componentes como contratos reutilizables. |
 
 ---
 
@@ -172,11 +202,11 @@ diseno-de-soluciones/
 
 | Tipo | Cantidad |
 |------|:--------:|
-| Skills estructurados (carpeta) | 3 |
-| Skills planos (archivo único) | 2 |
+| Skills estructurados (carpeta) | 5 |
+| Skills planos (archivo único) | 1 |
 | Guías | 1 |
-| **Total artefactos** | **6** |
-| Referencias técnicas | 18 |
-| Scripts Python / Shell | 11 |
+| **Total artefactos** | **7** |
+| Referencias técnicas | 28 |
+| Scripts Python / Shell | 13 |
 | Plantillas de reporte | 3 |
-| Archivos de evaluación (evals) | 3 |
+| Archivos de evaluación (evals) | 5 |
