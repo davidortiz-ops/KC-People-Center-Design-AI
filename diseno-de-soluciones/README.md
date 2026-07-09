@@ -11,7 +11,7 @@ evals y opcionalmente scripts) y skills planos (archivo único).
 
 ## Qué tiene
 
-**7 artefactos** organizados en cuatro categorías:
+**8 artefactos** organizados en cuatro categorías:
 
 ### Skills de usabilidad y accesibilidad
 
@@ -26,6 +26,7 @@ evals y opcionalmente scripts) y skills planos (archivo único).
 | Artefacto | Tipo | Versión | ¿Qué problema resuelve? |
 |-----------|------|---------|-------------------------|
 | **Contratos de Diseño** | Skill estructurado | 1.0 | Convierte piezas de UI en contratos YAML validados contra los tokens del sistema de diseño del usuario, y los empaqueta como proyecto portable que cualquier IA interpreta y genera igual. |
+| **Designsystem-creator** | Skill estructurado | 1.0 | Bootstrapea un sistema de diseño nuevo clonando una plantilla real con toda la arquitectura de contratos (docs-site, scripts, CI, skills ya instaladas), y si hay Figma o código existente siembra tokens reales y fichas parciales por componente. |
 
 ### Skills de evaluación conductual y organizacional
 
@@ -50,6 +51,7 @@ evals y opcionalmente scripts) y skills planos (archivo único).
 | Accesibilidad WCAG | Te exijan cumplimiento legal de accesibilidad (Circular SFC, Ley 1618, MinTIC). Quieras certificar nivel A/AA/AAA. Necesites reportes técnicos + ejecutivos + declaración de conformidad. |
 | Tognazzini | Estés diseñando o auditando el flujo de crédito de vivienda. Necesites una evaluación centrada en la experiencia del usuario, no solo en la interfaz. |
 | Contratos de Diseño | Necesites especificar una pieza de UI para que cualquier IA la genere igual. Quieras estandarizar cómo se documentan los componentes de tu design system contra tokens reales. |
+| Designsystem-creator | Vayas a arrancar un sistema de diseño nuevo desde cero. Quieras conectar un Figma nuevo o migrar código existente y organizarlo como sistema de contratos. Necesites el andamiaje completo (docs-site, CI, scripts) sin construirlo a mano. |
 | Proto-Persona Top Tier | Quieras validar que tu producto bancario cumple las expectativas del segmento premium. Necesites behavioral insights del cliente de altos ingresos. Quieras reinterpretar hallazgos de otros skills desde la perspectiva Top Tier. |
 | Consultor Madurez DS | Necesites diagnosticar el estado actual de tu Design System. Quieras una hoja de ruta para evolucionarlo. Estés en una organización que busca estandarizar su DS. |
 | Lineamientos Skills | Vayas a crear un skill nuevo en este chapter. Necesites saber la estructura obligatoria, el formato de frontmatter o los estándares de scripts Python. |
@@ -80,6 +82,7 @@ Cada skill opera en **dos modos** que se detectan automáticamente:
 | Accesibilidad WCAG | _"Audita la accesibilidad de [URL] nivel AA"_, _"Revisa el contraste de color de [URL]"_ | `python scripts/check_contrast.py --foreground #fff --background #000` |
 | Tognazzini | _"Evalúa el flujo de solicitud de crédito de vivienda de [URL] usando heurísticas de Tognazzini"_ | `python scripts/calculate_score.py hallazgos.json`, `python scripts/generate_report.py hallazgos.json` |
 | Contratos de Diseño | _"Aquí están mis tokens, necesito el contrato de este botón"_, _"Valida este YAML de contrato"_ | No tiene scripts (no requiere cómputo, mismo flujo que en modo ID) |
+| Designsystem-creator | _"Móntame un sistema de diseño nuevo desde cero"_, _"Tengo un Figma conectado, organízalo como sistema de contratos"_ | Clona `plantilla/` real en el repo, `npm install`, `python scripts/generar_tokens_css.py`, `python scripts/validar_contratos.py` |
 | Proto-Persona Top Tier | _"Evalúa el login de [URL] como cliente Top Tier"_, _"Dame behavioral insights sobre wealth management"_ | `python scripts/calculate_tte_score.py hallazgos.json`, `python scripts/extract_insights.py hallazgos.json` |
 | Consultor Madurez DS | _"Necesito un test de madurez de mi Design System"_, _"Diagnostica la gestión y operación de mi DS"_ | No tiene scripts (skill plano) |
 
@@ -179,6 +182,13 @@ diseno-de-soluciones/
 │   │   └── canonico-*.yaml                      # 2 contratos reales de referencia
 │   └── contratos-de-diseno.skill                # Paquete .skill del artefacto
 │
+├── designsystem-creator/                        # Skill estructurado (bootstrap de sistema de diseño nuevo)
+│   ├── SKILL.md                                 # Lógica principal (detectar fuente → scaffold → tokens → siembra → verificar)
+│   ├── README.md                                # Documentación
+│   ├── LICENSE                                  # Licencia Pragma
+│   ├── evals/evals.json                         # Pruebas de calidad
+│   └── plantilla/                               # Proyecto base que se clona tal cual (docs-site, scripts, CI, skills co-locadas)
+│
 ├── consultor-madurez-design-systems.md          # Skill plano
 ├── lineamientos-skills.md                       # Guía de estándares
 └── README.md                                    # Este archivo
@@ -195,6 +205,8 @@ diseno-de-soluciones/
 | Proto-Persona Top Tier + Accesibilidad WCAG | Evalúa la accesibilidad desde la perspectiva de un usuario de altos ingresos con posibles discapacidades o preferencias de accesibilidad. |
 | Consultor Madurez DS + Proto-Persona Top Tier | Evalúa si la madurez del Design System soporta adecuadamente las necesidades del segmento premium. |
 | Consultor Madurez DS + Contratos de Diseño | Diagnostica la madurez del Design System y, una vez tiene tokens documentados, especifica sus componentes como contratos reutilizables. |
+| Designsystem-creator + Contratos de Diseño | El creator monta el terreno (scaffold, tokens, fichas parciales); Contratos de Diseño completa, compila y valida cada ficha sembrada. |
+| Consultor Madurez DS + Designsystem-creator | Diagnostica que el Design System no tiene arquitectura de contratos todavía, y el creator la monta desde cero o desde el Figma/código existente. |
 
 ---
 
@@ -202,11 +214,11 @@ diseno-de-soluciones/
 
 | Tipo | Cantidad |
 |------|:--------:|
-| Skills estructurados (carpeta) | 5 |
+| Skills estructurados (carpeta) | 6 |
 | Skills planos (archivo único) | 1 |
 | Guías | 1 |
-| **Total artefactos** | **7** |
+| **Total artefactos** | **8** |
 | Referencias técnicas | 28 |
-| Scripts Python / Shell | 13 |
+| Scripts Python / Shell | 15 |
 | Plantillas de reporte | 3 |
-| Archivos de evaluación (evals) | 5 |
+| Archivos de evaluación (evals) | 6 |
