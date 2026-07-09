@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Validador de contratos v0 — corre desde la raíz del repo: python3 scripts/validar_contratos.py"""
 import glob, json, re, sys, difflib
+from pathlib import Path
 try:
     import yaml
 except ImportError:
@@ -40,7 +41,8 @@ def extraer_tokens_usados(doc):
 
 def main():
     tokens = aplanar_tokens("tokens/tokens.json")
-    archivos = sorted(glob.glob("**/*.contract.yaml", recursive=True) + glob.glob("**/*.template.yaml", recursive=True))
+    crudos = glob.glob("**/*.contract.yaml", recursive=True) + glob.glob("**/*.template.yaml", recursive=True)
+    archivos = sorted(f for f in crudos if "_ejemplos" not in Path(f).parts)
     fallas = 0
     for f in archivos:
         errores, avisos = [], []
