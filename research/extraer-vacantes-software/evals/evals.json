@@ -1,0 +1,17 @@
+{
+  "skill_name": "extraer-vacantes-software",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Extrae estas cinco vacantes de software, normaliza el stack y separa requisitos obligatorios y deseables.",
+      "expected_output": "Una fila por vacante con IDs, campos normalizados, salario descompuesto e inferencias marcadas.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Devuelve estas vacantes como JSON y detecta anuncios posiblemente duplicados sin fusionarlos.",
+      "expected_output": "JSON con claves estables, null para ausencias y una lista justificada de duplicados potenciales.",
+      "files": []
+    }
+  ]
+}

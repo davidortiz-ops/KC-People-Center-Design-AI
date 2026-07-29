@@ -1,0 +1,17 @@
+{
+  "skill_name": "diagnosticar-barreras-conductuales",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Analiza por qué los usuarios abandonan el registro sin asumir que existe un sesgo cognitivo.",
+      "expected_output": "Barreras y explicaciones alternativas, hipótesis refutables, evidencia a favor y en contra y datos faltantes.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Propón intervenciones éticas para aumentar la adopción y diseña cómo validarlas.",
+      "expected_output": "Intervenciones vinculadas a mecanismos, plan de prueba, métricas de resguardo y revisión ética explícita.",
+      "files": []
+    }
+  ]
+}

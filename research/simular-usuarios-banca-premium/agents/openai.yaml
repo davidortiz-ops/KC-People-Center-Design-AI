@@ -1,0 +1,4 @@
+interface:
+  display_name: "Usuarios Sintéticos de Banca Premium"
+  short_description: "Simula perfiles premium con límites"
+  default_prompt: "Usa $simular-usuarios-banca-premium para construir y operar un perfil sintético trazable."

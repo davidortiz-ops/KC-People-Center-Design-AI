@@ -1,0 +1,17 @@
+{
+  "skill_name": "mapear-journey-conductual",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Construye el journey actual del onboarding móvil a partir de estas entrevistas y eventos de analytics.",
+      "expected_output": "Journey por etapas derivadas de evidencia, con acciones, transiciones, emociones etiquetadas, fricciones y fuentes.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Separa los journeys de usuarios nuevos y recurrentes e identifica sus momentos de ruptura.",
+      "expected_output": "Mapas separados por segmento, contrastes trazables, momentos de verdad priorizados y vacíos de investigación.",
+      "files": []
+    }
+  ]
+}

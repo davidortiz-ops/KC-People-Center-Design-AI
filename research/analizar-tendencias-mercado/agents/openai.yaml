@@ -1,0 +1,4 @@
+interface:
+  display_name: "Análisis de Tendencias de Mercado"
+  short_description: "Detecta tendencias y construye escenarios"
+  default_prompt: "Usa $analizar-tendencias-mercado para analizar estas fuentes y construir escenarios trazables."

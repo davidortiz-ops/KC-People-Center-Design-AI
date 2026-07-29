@@ -1,0 +1,4 @@
+interface:
+  display_name: "Análisis de Contenido Temático"
+  short_description: "Codifica y sintetiza evidencia cualitativa"
+  default_prompt: "Usa $analizar-contenido-tematico para codificar este corpus con trazabilidad de fuentes."

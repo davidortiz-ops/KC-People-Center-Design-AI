@@ -1,0 +1,10 @@
+Copyright (c) 2026 Pragma. Todos los derechos reservados.
+
+Este skill es propiedad confidencial de Pragma. Se autoriza su acceso y uso
+exclusivamente a personal y colaboradores autorizados de Pragma para fines
+internos. Sin autorización previa y escrita de Pragma queda prohibido copiar,
+modificar, adaptar, publicar, distribuir, sublicenciar, transferir, divulgar o
+utilizar este material para fines externos o comerciales.
+
+El material se proporciona "TAL CUAL", sin garantías. Pragma no será responsable
+por daños derivados de su uso. Todo derecho no otorgado queda reservado.

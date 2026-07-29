@@ -1,0 +1,17 @@
+{
+  "skill_name": "crear-personas-ux",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Crea personas UX a partir de estas doce entrevistas sin inventar demografía ni citas.",
+      "expected_output": "Segmentos conductuales diferenciados, matriz de evidencia, verbatims trazables, límites y supuestos.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Evalúa si este corpus realmente permite crear más de una persona y evita forzar la segmentación.",
+      "expected_output": "Decisión metodológica sustentada; patrones provisionales si no hay evidencia suficiente para personas distintas.",
+      "files": []
+    }
+  ]
+}

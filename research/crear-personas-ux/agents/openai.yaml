@@ -1,0 +1,4 @@
+interface:
+  display_name: "Creación de Personas UX"
+  short_description: "Crea personas conductuales sustentadas"
+  default_prompt: "Usa $crear-personas-ux para crear personas conductuales basadas en este corpus."

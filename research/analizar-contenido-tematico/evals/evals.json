@@ -1,0 +1,17 @@
+{
+  "skill_name": "analizar-contenido-tematico",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Analiza estas transcripciones de entrevistas con codificación inductiva y crea un diccionario de códigos trazable.",
+      "expected_output": "Categorías y códigos con criterios de inclusión y exclusión, citas localizables, patrones, casos negativos y limitaciones.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Compara los temas de dos segmentos en este corpus e indica contradicciones y evidencia insuficiente.",
+      "expected_output": "Análisis comparativo que separa observaciones e inferencias y vincula cada hallazgo con fuentes identificadas.",
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Extracción de Vacantes de Software"
+  short_description: "Estructura datos de vacantes de software"
+  default_prompt: "Usa $extraer-vacantes-software para extraer y normalizar estas vacantes."

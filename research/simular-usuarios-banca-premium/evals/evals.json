@@ -1,0 +1,17 @@
+{
+  "skill_name": "simular-usuarios-banca-premium",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Construye y audita un perfil sintético de banca premium a partir de esta investigación colombiana.",
+      "expected_output": "Perfil con evidencia, geografía, confianza, variaciones, límites y supuestos; sin citas o atributos inventados.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Responde como el perfil auditado ante una propuesta que no está cubierta completamente por la investigación.",
+      "expected_output": "Hipótesis sintética limitada al perfil, elementos no determinados, variables relevantes y preguntas para investigación real.",
+      "files": []
+    }
+  ]
+}

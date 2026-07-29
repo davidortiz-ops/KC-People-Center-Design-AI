@@ -1,0 +1,4 @@
+interface:
+  display_name: "Diagnóstico de Barreras Conductuales"
+  short_description: "Formula hipótesis y nudges éticos"
+  default_prompt: "Usa $diagnosticar-barreras-conductuales para diagnosticar barreras y proponer pruebas éticas."

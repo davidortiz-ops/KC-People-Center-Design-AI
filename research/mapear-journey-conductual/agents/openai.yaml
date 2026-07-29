@@ -1,0 +1,4 @@
+interface:
+  display_name: "Behavioral Customer Journey Map"
+  short_description: "Mapea journeys conductuales con evidencia"
+  default_prompt: "Usa $mapear-journey-conductual para construir un journey basado en esta evidencia."

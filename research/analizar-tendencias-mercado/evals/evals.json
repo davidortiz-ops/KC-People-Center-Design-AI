@@ -1,0 +1,17 @@
+{
+  "skill_name": "analizar-tendencias-mercado",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Analiza las tendencias del mercado colombiano de banca digital con fecha de corte actual y horizonte de tres años.",
+      "expected_output": "Tendencias y señales diferenciadas, fuentes fechadas, evaluación de evidencia e incertidumbre, escenarios e indicadores tempranos.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Contrasta estos reportes contradictorios y determina qué señales deberían monitorearse antes de invertir.",
+      "expected_output": "Evaluación de calidad de fuentes, contradicciones explícitas, escenarios no predictivos y recomendaciones vinculadas con evidencia.",
+      "files": []
+    }
+  ]
+}
