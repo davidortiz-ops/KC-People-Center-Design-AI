@@ -7,6 +7,7 @@ description: >
   "generar sitemap", "índice de sitemap", "sitemap de imágenes", "sitemap de video",
   "IndexNow", "errores de sitemap", o cuando configure o depure el sitemap de un sitio.
 version: 2.0.0
+license: Proprietary - Pragma (uso interno y confidencial)
 allowed-tools:
   - Read
   - Write
@@ -15,6 +16,9 @@ allowed-tools:
   - Glob
   - AskUserQuestion
   - WebFetch
+metadata:
+  version: "1.0"
+  author: Pragma
 ---
 
 # SEO: Sitemaps y Gestión de URLs

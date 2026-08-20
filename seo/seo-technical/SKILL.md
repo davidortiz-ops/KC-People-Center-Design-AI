@@ -8,6 +8,7 @@ description: >
   "contenido duplicado", "crawl", "indexación mobile-first", o cuando cree rutas/URLs
   nuevas, migre URLs o defina la estrategia de canonicalización de un sitio.
 version: 2.0.0
+license: Proprietary - Pragma (uso interno y confidencial)
 allowed-tools:
   - Read
   - Write
@@ -16,6 +17,9 @@ allowed-tools:
   - Glob
   - AskUserQuestion
   - WebFetch
+metadata:
+  version: "1.0"
+  author: Pragma
 ---
 
 # SEO: Rastreo e Indexación

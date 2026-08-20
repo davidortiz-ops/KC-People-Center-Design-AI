@@ -5,6 +5,7 @@ description: >
   Rastrea hasta 500 páginas, detecta el tipo de negocio, delega a 7 especialistas,
   genera un puntaje de salud. Usar cuando el usuario diga "audit", "full SEO check",
   "analyze my site" o "website health check".
+license: Proprietary - Pragma (uso interno y confidencial)
 allowed-tools:
   - Read
   - Write
@@ -14,6 +15,9 @@ allowed-tools:
   - AskUserQuestion
   - Bash
   - WebFetch
+metadata:
+  version: "1.0"
+  author: Pragma
 ---
 
 # Auditoría SEO Completa de Sitio Web

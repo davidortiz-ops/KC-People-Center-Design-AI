@@ -6,6 +6,7 @@ description: >
   markup de schema y optimización de conversión. Usar cuando el usuario diga
   "comparison page", "vs page", "alternatives page", "competitor comparison"
   o "X vs Y".
+license: Proprietary - Pragma (uso interno y confidencial)
 allowed-tools:
   - Read
   - Write
@@ -15,6 +16,9 @@ allowed-tools:
   - AskUserQuestion
   - WebFetch
   - WebSearch
+metadata:
+  version: "1.0"
+  author: Pragma
 ---
 
 # Páginas de Comparación y Alternativas

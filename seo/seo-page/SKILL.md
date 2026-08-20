@@ -5,6 +5,7 @@ description: >
   contenido, meta tags técnicos, schema, imágenes y rendimiento. Úsala cuando el
   usuario diga "analiza esta página", "verifica SEO de página", o proporcione una
   URL única para revisión.
+license: Proprietary - Pragma (uso interno y confidencial)
 allowed-tools:
   - Read
   - Write
@@ -13,6 +14,9 @@ allowed-tools:
   - Glob
   - AskUserQuestion
   - WebFetch
+metadata:
+  version: "1.0"
+  author: Pragma
 ---
 
 # Análisis de Página Individual

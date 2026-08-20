@@ -6,6 +6,7 @@ description: >
   enlazado interno, salvaguardas contra contenido thin y prevención de index bloat.
   Úsala cuando el usuario diga "SEO programático", "páginas a escala", "páginas
   dinámicas", "páginas de plantilla", "páginas generadas" o "SEO basado en datos".
+license: Proprietary - Pragma (uso interno y confidencial)
 allowed-tools:
   - Read
   - Write
@@ -15,6 +16,9 @@ allowed-tools:
   - AskUserQuestion
   - WebFetch
   - WebSearch
+metadata:
+  version: "1.0"
+  author: Pragma
 ---
 
 # Análisis y Planificación SEO Programático

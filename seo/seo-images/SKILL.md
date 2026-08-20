@@ -8,6 +8,7 @@ description: >
   "imágenes SEO", "alt text", "WebP", "AVIF", "srcset", "Google Images", "video SEO",
   "sitemap de imágenes", o cuando agregue imágenes o videos a una página.
 version: 2.0.0
+license: Proprietary - Pragma (uso interno y confidencial)
 allowed-tools:
   - Read
   - Write
@@ -16,6 +17,9 @@ allowed-tools:
   - Glob
   - AskUserQuestion
   - WebFetch
+metadata:
+  version: "1.0"
+  author: Pragma
 ---
 
 # SEO: Imágenes y Video

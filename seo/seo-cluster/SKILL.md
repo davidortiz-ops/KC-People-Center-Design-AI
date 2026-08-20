@@ -8,6 +8,7 @@ description: >
   interactivas. Usar cuando el usuario diga "topic cluster",
   "content cluster", "semantic clustering", "pillar page", "hub and spoke",
   "content architecture", "cluster plan".
+license: Proprietary - Pragma (uso interno y confidencial)
 allowed-tools:
   - Read
   - Write
@@ -18,6 +19,9 @@ allowed-tools:
   - Bash
   - WebFetch
   - WebSearch
+metadata:
+  version: "1.0"
+  author: Pragma
 ---
 
 # Agrupación Semántica de Topics

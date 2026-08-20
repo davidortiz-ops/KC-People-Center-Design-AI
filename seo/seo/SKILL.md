@@ -13,6 +13,7 @@ description: >
   negocios locales, publishers, agencias. Se activa con: "SEO", "auditoría", "schema",
   "Core Web Vitals", "sitemap", "E-E-A-T", "AI Overviews", "GEO", "SEO técnico",
   "calidad de contenido", "velocidad de página", "datos estructurados".
+license: Proprietary - Pragma (uso interno y confidencial)
 allowed-tools:
   - Read
   - Write
@@ -22,6 +23,9 @@ allowed-tools:
   - AskUserQuestion
   - WebFetch
   - WebSearch
+metadata:
+  version: "1.0"
+  author: Pragma
 ---
 
 # SEO — Skill de Análisis SEO Universal

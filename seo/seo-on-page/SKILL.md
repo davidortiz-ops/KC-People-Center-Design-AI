@@ -8,6 +8,7 @@ description: >
   "vista previa social", "social preview", "Google Discover", "favicon", o cuando
   configure el <head> de páginas nuevas o corrija meta tags faltantes o duplicados.
 version: 2.0.0
+license: Proprietary - Pragma (uso interno y confidencial)
 allowed-tools:
   - Read
   - Write
@@ -17,6 +18,9 @@ allowed-tools:
   - AskUserQuestion
   - WebFetch
   - WebSearch
+metadata:
+  version: "1.0"
+  author: Pragma
 ---
 
 # SEO: Meta Tags y Open Graph

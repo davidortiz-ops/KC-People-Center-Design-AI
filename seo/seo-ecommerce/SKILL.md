@@ -6,6 +6,7 @@ description: >
   de producto, inteligencia de precios. Usar cuando el usuario diga "ecommerce
   SEO", "product SEO", "Google Shopping", "product schema", "Amazon SEO",
   "product listings", "shopping ads", "merchant SEO".
+license: Proprietary - Pragma (uso interno y confidencial)
 allowed-tools:
   - Read
   - Write
@@ -15,6 +16,9 @@ allowed-tools:
   - AskUserQuestion
   - WebFetch
   - WebSearch
+metadata:
+  version: "1.0"
+  author: Pragma
 ---
 
 # Análisis SEO para E-commerce

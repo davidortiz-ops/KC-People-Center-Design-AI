@@ -5,6 +5,7 @@ description: >
   específicas por industria, análisis competitivo, estrategia de contenido y hoja
   de ruta de implementación. Úsala cuando el usuario diga "plan SEO", "estrategia SEO",
   "estrategia de contenido", "arquitectura de sitio" o "hoja de ruta SEO".
+license: Proprietary - Pragma (uso interno y confidencial)
 allowed-tools:
   - Read
   - Write
@@ -14,6 +15,9 @@ allowed-tools:
   - AskUserQuestion
   - WebFetch
   - WebSearch
+metadata:
+  version: "1.0"
+  author: Pragma
 ---
 
 # Planificación Estratégica SEO

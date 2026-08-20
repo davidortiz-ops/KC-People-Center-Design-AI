@@ -9,6 +9,7 @@ description: >
   por plataforma. Usar cuando el usuario diga "AI Overviews", "SGE",
   "GEO", "AI search", "LLM optimization", "Perplexity", "AI citations",
   "ChatGPT search" o "AI visibility".
+license: Proprietary - Pragma (uso interno y confidencial)
 allowed-tools:
   - Read
   - Write
@@ -18,6 +19,9 @@ allowed-tools:
   - AskUserQuestion
   - WebFetch
   - WebSearch
+metadata:
+  version: "1.0"
+  author: Pragma
 ---
 
 # Optimización para Búsqueda IA / GEO (Febrero 2026)

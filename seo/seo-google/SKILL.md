@@ -11,6 +11,7 @@ description: >
   "field data", "GA4", "URL inspection", "LCP", "INP", "CLS", "FCP", "TTFB",
   "analiza keywords", "oportunidades GSC", "qué palabras optimizar", "impresiones y
   posición", o pida insights de rendimiento de búsqueda para cualquier URL.
+license: Proprietary - Pragma (uso interno y confidencial)
 allowed-tools:
   - Read
   - Write
@@ -20,6 +21,9 @@ allowed-tools:
   - AskUserQuestion
   - Bash
   - WebFetch
+metadata:
+  version: "1.0"
+  author: Pragma
 ---
 
 # Google SEO APIs — Google APIs Unificadas

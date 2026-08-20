@@ -7,6 +7,7 @@ description: >
   páginas bien optimizadas fallan en rankear. Úsala cuando el usuario diga "SXO",
   "search experience", "page type mismatch", "análisis SERP", "user story",
   "persona scoring", "por qué mi página no rankea" o "intent mismatch".
+license: Proprietary - Pragma (uso interno y confidencial)
 allowed-tools:
   - Read
   - Write
@@ -16,6 +17,9 @@ allowed-tools:
   - AskUserQuestion
   - WebFetch
   - WebSearch
+metadata:
+  version: "1.0"
+  author: Pragma
 ---
 
 # Search Experience Optimization (SXO)

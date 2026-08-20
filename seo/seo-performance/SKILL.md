@@ -8,6 +8,7 @@ description: >
   "INP", "PageSpeed", "Lighthouse", "página lenta", "layout shift", "rendimiento web",
   "web performance", o cuando depure cargas lentas o desplazamientos de diseño.
 version: 2.0.0
+license: Proprietary - Pragma (uso interno y confidencial)
 allowed-tools:
   - Read
   - Write
@@ -16,6 +17,9 @@ allowed-tools:
   - Glob
   - AskUserQuestion
   - WebFetch
+metadata:
+  version: "1.0"
+  author: Pragma
 ---
 
 # SEO: Rendimiento y Core Web Vitals

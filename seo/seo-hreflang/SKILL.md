@@ -8,6 +8,7 @@ description: >
   "multirregional", "geotargeting", "x-default", "language tags", o cuando agregue
   variantes de idioma/región a páginas existentes.
 version: 2.0.0
+license: Proprietary - Pragma (uso interno y confidencial)
 allowed-tools:
   - Read
   - Write
@@ -16,6 +17,9 @@ allowed-tools:
   - Glob
   - AskUserQuestion
   - WebFetch
+metadata:
+  version: "1.0"
+  author: Pragma
 ---
 
 # SEO: Internacional y Multilenguaje

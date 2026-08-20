@@ -8,6 +8,7 @@ description: >
   hybrid) y vertical de industria. Usar cuando el usuario diga "local SEO",
   "Google Business Profile", "GBP", "map pack", "local pack", "citations",
   "NAP", "local rankings", "service area", "multi-location", "local search".
+license: Proprietary - Pragma (uso interno y confidencial)
 allowed-tools:
   - Read
   - Write
@@ -16,6 +17,9 @@ allowed-tools:
   - Glob
   - AskUserQuestion
   - WebFetch
+metadata:
+  version: "1.0"
+  author: Pragma
 ---
 
 # Análisis SEO Local
