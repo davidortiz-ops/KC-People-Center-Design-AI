@@ -13,6 +13,15 @@ description: >
   problemas de usabilidad, test heurístico, evaluar interfaz, revisión de
   experiencia de usuario, análisis de usabilidad bancaria, o compliance
   regulatorio en interfaces financieras.
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - Bash
+  - AskUserQuestion
+  - WebFetch
 version: 2.0
 author: Pragma
 triggers:

@@ -13,6 +13,15 @@ description: >
   de hacer accesible una banca digital o un comercio electrónico
   (e-commerce), aunque no use la palabra "auditoría".
 license: Proprietary — Pragma (uso interno y confidencial)
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - Bash
+  - AskUserQuestion
+  - WebFetch
 metadata:
   version: "2.0"
   author: Pragma

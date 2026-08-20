@@ -12,6 +12,15 @@ description: >
   No usar para perfiles de banca privada ultra-high-net-worth (family offices), segmentos
   aspiracionales o no bancarizados.
 license: Proprietary — Pragma (uso interno y confidencial)
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - Bash
+  - AskUserQuestion
+  - WebFetch
 metadata:
   version: "1.0"
   author: Pragma

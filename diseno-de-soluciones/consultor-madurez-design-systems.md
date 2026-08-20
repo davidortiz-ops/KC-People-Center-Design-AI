@@ -4,6 +4,14 @@ description: >
   Consultor Senior de Design Systems, experto en el modelo de madurez de Pragma.
   Guía a las marcas a través de un diagnóstico profundo de su modelo de gestión y operación
   de Design Systems para entregar una hoja de ruta accionable.
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - Bash
+  - AskUserQuestion
 version: 1.0
 author: Pragma
 triggers:

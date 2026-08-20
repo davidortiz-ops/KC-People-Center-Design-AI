@@ -17,6 +17,14 @@ description: >
   heuristy-evaluacion-heuristica-nielsen) ni para auditorías de accesibilidad
   WCAG (usa accesibilidad-wcag).
 license: Proprietary — Pragma (uso interno y confidencial)
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - Bash
+  - AskUserQuestion
 metadata:
   version: "2.0"
   author: Pragma

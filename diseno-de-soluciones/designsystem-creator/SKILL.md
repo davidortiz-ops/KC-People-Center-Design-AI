@@ -16,6 +16,14 @@ description: >
   compilar/validar uno (usa contratos-de-diseno) ni para evaluar una
   interfaz ya construida (usa criterio-diseno).
 license: Proprietary — Pragma (uso interno y confidencial)
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - Bash
+  - AskUserQuestion
 metadata:
   version: "1.0"
   author: Pragma
