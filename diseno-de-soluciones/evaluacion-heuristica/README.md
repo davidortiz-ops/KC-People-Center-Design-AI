@@ -2,7 +2,7 @@
 
 Skill de auditoría de usabilidad basada en las **10 heurísticas de Nielsen**, con extensiones sectoriales para **banca** y **retail**. Diseñado para investigadores de UX, diseñadores de servicios, analistas de experiencia de cliente y product managers.
 
-Versión 2.0 · People Center Design · Pragma
+Versión 2.0 · People Centered Design · Pragma
 
 ---
 

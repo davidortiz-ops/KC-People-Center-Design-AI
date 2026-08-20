@@ -1,6 +1,6 @@
-# PromptsOps — People Center Design - Pragma
+# PromptsOps — People Centered Design - Pragma
 
-Biblioteca de **skills, prompts y artefactos** de **People Center Design - Pragma**.
+Biblioteca de **skills, prompts y artefactos** de **People Centered Design - Pragma**.
 Reúne agentes y prompts reutilizables que cubren el ciclo de un proyecto digital:
 **descubrimiento de negocio**, **diseño de soluciones**, **investigación** y **SEO**.
 

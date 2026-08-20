@@ -2,7 +2,7 @@
 
 Skill que convierte descripciones en español de piezas de UI en **contratos YAML** validados contra los tokens del sistema de diseño del usuario, y los estructura como un **proyecto portable** que cualquier IA puede interpretar de forma idéntica.
 
-Versión 1.0 · People Center Design · Pragma
+Versión 1.0 · People Centered Design · Pragma
 
 ---
 

@@ -2,7 +2,7 @@
 
 Skill de auditoría de experiencia de usuario basado en las **16 heurísticas de Bruce Tognazzini**, aplicado al proceso de **crédito de vivienda convencional y especial**. Diseñado para investigadores de UX, diseñadores de servicios, analistas de experiencia de cliente y product managers de banca hipotecaria.
 
-Versión 2.0 · People Center Design · Pragma
+Versión 2.0 · People Centered Design · Pragma
 
 ---
 

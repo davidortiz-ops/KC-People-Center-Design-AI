@@ -2,7 +2,7 @@
 
 Skill de evaluación de experiencia digital bancaria desde la perspectiva del cliente de altos ingresos y alto patrimonio (Top Tier). El modelo actúa como este usuario para evaluar interfaces, flujos y funcionalidades, generar behavioral insights, e integrarse con otros skills (Heuristy, Tognazzini, accesibilidad) para reinterpretar hallazgos desde la perspectiva del segmento premium.
 
-Versión 1.0 · People Center Design · Pragma
+Versión 1.0 · People Centered Design · Pragma
 
 ---
 

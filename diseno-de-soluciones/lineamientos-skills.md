@@ -1,6 +1,6 @@
 # Lineamientos para Skills de Diseño de Soluciones
 
-Estándares obligatorios para crear, modificar o evaluar skills dentro del chapter **People Center Design — Pragma**.
+Estándares obligatorios para crear, modificar o evaluar skills dentro del chapter **People Centered Design — Pragma**.
 
 ---
 

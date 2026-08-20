@@ -2,7 +2,7 @@
 
 Skill que monta el terreno de un sistema de diseño nuevo basado en contratos: clona una plantilla real (`plantilla/`, co-locada en esta skill) con toda la arquitectura reutilizable — docs-site en Astro, scripts de validación y generación de tokens, CI, y las skills `contratos-de-diseno` y `criterio-diseno` ya instaladas — y, si hay una fuente disponible, siembra tokens reales y fichas parciales por componente.
 
-Versión 1.0 · People Center Design · Pragma
+Versión 1.0 · People Centered Design · Pragma
 
 ---
 

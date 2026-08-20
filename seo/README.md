@@ -1,6 +1,6 @@
 # SEO
 
-> Chapter de **People Center Design - Pragma**.
+> Chapter de **People Centered Design - Pragma**.
 
 Colección de **21 skills de SEO** para Claude Code, diseñadas para ser **agnósticas**
 (no dependen de ningún sitio, dominio ni stack concreto) y **completamente en español**.

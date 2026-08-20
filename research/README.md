@@ -1,6 +1,6 @@
 # Research
 
-> Chapter de **People Center Design - Pragma**.
+> Chapter de **People Centered Design - Pragma**.
 
 Skills para **investigación de usuario y de mercado**. Cada skill define un flujo
 operativo, controles de evidencia, formato de salida, compatibilidad y licencia de

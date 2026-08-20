@@ -2,7 +2,7 @@
 
 Skill de auditoría de accesibilidad web para **banca** y **retail** en el contexto normativo colombiano. Diseñado para investigadores de UX, diseñadores de servicios, analistas de experiencia de cliente, product managers y consultores de inclusión digital.
 
-Versión 2.1 · People Center Design · Pragma
+Versión 2.1 · People Centered Design · Pragma
 
 ---
 

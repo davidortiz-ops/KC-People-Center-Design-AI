@@ -1,6 +1,6 @@
 # Diseño de Soluciones
 
-> Chapter de **People Center Design - Pragma**.
+> Chapter de **People Centered Design - Pragma**.
 
 Artefactos para la fase de **diseño de soluciones**: evaluación de usabilidad,
 accesibilidad, experiencia conductual, madurez de design systems y
