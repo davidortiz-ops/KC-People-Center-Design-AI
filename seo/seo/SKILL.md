@@ -13,6 +13,16 @@ description: >
   negocios locales, publishers, agencias. Se activa con: "SEO", "auditoría", "schema",
   "Core Web Vitals", "sitemap", "E-E-A-T", "AI Overviews", "GEO", "SEO técnico",
   "calidad de contenido", "velocidad de página", "datos estructurados".
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - AskUserQuestion
+  - Bash
+  - WebFetch
+  - WebSearch
 ---
 
 # SEO — Skill de Análisis SEO Universal

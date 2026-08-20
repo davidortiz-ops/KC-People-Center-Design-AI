@@ -5,6 +5,14 @@ description: >
   contenido, meta tags técnicos, schema, imágenes y rendimiento. Úsala cuando el
   usuario diga "analiza esta página", "verifica SEO de página", o proporcione una
   URL única para revisión.
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - AskUserQuestion
+  - WebFetch
 ---
 
 # Análisis de Página Individual

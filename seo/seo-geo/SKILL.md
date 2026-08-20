@@ -9,6 +9,15 @@ description: >
   por plataforma. Usar cuando el usuario diga "AI Overviews", "SGE",
   "GEO", "AI search", "LLM optimization", "Perplexity", "AI citations",
   "ChatGPT search" o "AI visibility".
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - AskUserQuestion
+  - WebFetch
+  - WebSearch
 ---
 
 # Optimización para Búsqueda IA / GEO (Febrero 2026)

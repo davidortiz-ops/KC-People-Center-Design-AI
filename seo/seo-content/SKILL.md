@@ -4,6 +4,16 @@ description: >
   Análisis de calidad de contenido y E-E-A-T con evaluación de preparación
   para citas de IA. Usar cuando el usuario diga "content quality", "E-E-A-T",
   "content analysis", "readability check", "thin content" o "content audit".
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - AskUserQuestion
+  - Bash
+  - WebFetch
+  - WebSearch
 ---
 
 # Análisis de Calidad de Contenido y E-E-A-T

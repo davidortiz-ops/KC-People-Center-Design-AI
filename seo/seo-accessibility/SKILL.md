@@ -8,6 +8,14 @@ description: >
   "accessibility", "a11y", o cuando construya navegación, formularios, modales o
   componentes interactivos que deban ser accesibles e indexables.
 version: 2.0.0
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - AskUserQuestion
+  - WebFetch
 ---
 
 # SEO: Accesibilidad

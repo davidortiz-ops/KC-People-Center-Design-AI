@@ -8,6 +8,15 @@ description: >
   "vista previa social", "social preview", "Google Discover", "favicon", o cuando
   configure el <head> de páginas nuevas o corrija meta tags faltantes o duplicados.
 version: 2.0.0
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - AskUserQuestion
+  - WebFetch
+  - WebSearch
 ---
 
 # SEO: Meta Tags y Open Graph

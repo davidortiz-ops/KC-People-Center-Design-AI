@@ -8,6 +8,14 @@ description: >
   "contenido duplicado", "crawl", "indexación mobile-first", o cuando cree rutas/URLs
   nuevas, migre URLs o defina la estrategia de canonicalización de un sitio.
 version: 2.0.0
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - AskUserQuestion
+  - WebFetch
 ---
 
 # SEO: Rastreo e Indexación

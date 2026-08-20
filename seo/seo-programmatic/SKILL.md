@@ -6,6 +6,15 @@ description: >
   enlazado interno, salvaguardas contra contenido thin y prevención de index bloat.
   Úsala cuando el usuario diga "SEO programático", "páginas a escala", "páginas
   dinámicas", "páginas de plantilla", "páginas generadas" o "SEO basado en datos".
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - AskUserQuestion
+  - WebFetch
+  - WebSearch
 ---
 
 # Análisis y Planificación SEO Programático

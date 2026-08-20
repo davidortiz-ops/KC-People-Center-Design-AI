@@ -8,6 +8,16 @@ description: >
   interactivas. Usar cuando el usuario diga "topic cluster",
   "content cluster", "semantic clustering", "pillar page", "hub and spoke",
   "content architecture", "cluster plan".
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - AskUserQuestion
+  - Bash
+  - WebFetch
+  - WebSearch
 ---
 
 # Agrupación Semántica de Topics

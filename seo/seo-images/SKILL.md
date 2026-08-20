@@ -8,6 +8,14 @@ description: >
   "imágenes SEO", "alt text", "WebP", "AVIF", "srcset", "Google Images", "video SEO",
   "sitemap de imágenes", o cuando agregue imágenes o videos a una página.
 version: 2.0.0
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - AskUserQuestion
+  - WebFetch
 ---
 
 # SEO: Imágenes y Video

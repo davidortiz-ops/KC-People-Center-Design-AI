@@ -8,6 +8,14 @@ description: >
   "INP", "PageSpeed", "Lighthouse", "página lenta", "layout shift", "rendimiento web",
   "web performance", o cuando depure cargas lentas o desplazamientos de diseño.
 version: 2.0.0
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - AskUserQuestion
+  - WebFetch
 ---
 
 # SEO: Rendimiento y Core Web Vitals

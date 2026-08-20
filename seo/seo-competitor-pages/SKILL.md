@@ -6,6 +6,15 @@ description: >
   markup de schema y optimización de conversión. Usar cuando el usuario diga
   "comparison page", "vs page", "alternatives page", "competitor comparison"
   o "X vs Y".
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - AskUserQuestion
+  - WebFetch
+  - WebSearch
 ---
 
 # Páginas de Comparación y Alternativas

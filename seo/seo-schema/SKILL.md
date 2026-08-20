@@ -8,6 +8,15 @@ description: >
   "featured snippet", "FAQ schema", "Product schema", o cuando agregue marcado para
   mejorar la elegibilidad de resultados enriquecidos.
 version: 2.0.0
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - AskUserQuestion
+  - WebFetch
+  - WebSearch
 ---
 
 # Schema Avanzado y Snippets para SEO

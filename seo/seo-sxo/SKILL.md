@@ -7,6 +7,15 @@ description: >
   páginas bien optimizadas fallan en rankear. Úsala cuando el usuario diga "SXO",
   "search experience", "page type mismatch", "análisis SERP", "user story",
   "persona scoring", "por qué mi página no rankea" o "intent mismatch".
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - AskUserQuestion
+  - WebFetch
+  - WebSearch
 ---
 
 # Search Experience Optimization (SXO)

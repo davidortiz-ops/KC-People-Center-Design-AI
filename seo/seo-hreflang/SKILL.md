@@ -8,6 +8,14 @@ description: >
   "multirregional", "geotargeting", "x-default", "language tags", o cuando agregue
   variantes de idioma/región a páginas existentes.
 version: 2.0.0
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - AskUserQuestion
+  - WebFetch
 ---
 
 # SEO: Internacional y Multilenguaje

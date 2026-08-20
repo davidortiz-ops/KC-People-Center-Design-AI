@@ -11,6 +11,15 @@ description: >
   "field data", "GA4", "URL inspection", "LCP", "INP", "CLS", "FCP", "TTFB",
   "analiza keywords", "oportunidades GSC", "qué palabras optimizar", "impresiones y
   posición", o pida insights de rendimiento de búsqueda para cualquier URL.
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - AskUserQuestion
+  - Bash
+  - WebFetch
 ---
 
 # Google SEO APIs — Google APIs Unificadas

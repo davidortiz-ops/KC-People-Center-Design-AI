@@ -8,6 +8,14 @@ description: >
   hybrid) y vertical de industria. Usar cuando el usuario diga "local SEO",
   "Google Business Profile", "GBP", "map pack", "local pack", "citations",
   "NAP", "local rankings", "service area", "multi-location", "local search".
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - AskUserQuestion
+  - WebFetch
 ---
 
 # Análisis SEO Local

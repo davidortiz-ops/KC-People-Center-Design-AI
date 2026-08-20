@@ -5,6 +5,15 @@ description: >
   Rastrea hasta 500 páginas, detecta el tipo de negocio, delega a 7 especialistas,
   genera un puntaje de salud. Usar cuando el usuario diga "audit", "full SEO check",
   "analyze my site" o "website health check".
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - AskUserQuestion
+  - Bash
+  - WebFetch
 ---
 
 # Auditoría SEO Completa de Sitio Web

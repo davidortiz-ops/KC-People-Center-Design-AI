@@ -5,6 +5,15 @@ description: >
   específicas por industria, análisis competitivo, estrategia de contenido y hoja
   de ruta de implementación. Úsala cuando el usuario diga "plan SEO", "estrategia SEO",
   "estrategia de contenido", "arquitectura de sitio" o "hoja de ruta SEO".
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - AskUserQuestion
+  - WebFetch
+  - WebSearch
 ---
 
 # Planificación Estratégica SEO

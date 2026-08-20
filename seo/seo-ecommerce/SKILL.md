@@ -6,6 +6,15 @@ description: >
   de producto, inteligencia de precios. Usar cuando el usuario diga "ecommerce
   SEO", "product SEO", "Google Shopping", "product schema", "Amazon SEO",
   "product listings", "shopping ads", "merchant SEO".
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - AskUserQuestion
+  - WebFetch
+  - WebSearch
 ---
 
 # Análisis SEO para E-commerce
