@@ -19,13 +19,13 @@
     {
       "id": 2,
       "prompt": "Ya tienes nuestros tokens cargados de la sesión anterior. Quiero armar la página de 'Detalle de crédito hipotecario': un encabezado con el nombre del cliente y el estado del crédito, y luego tres secciones repetibles con la misma estructura de fila (Condiciones, Tarifas, Beneficios), cada una con su propio botón de eliminar. Al final necesito el paquete completo para pasárselo a otro equipo que usa ChatGPT.",
-      "expected_output": "Plan de contratación (árbol de piezas) confirmado con el usuario antes de compilar nada, contratación pieza por pieza de abajo hacia arriba reutilizando un organismo molde para las tres secciones repetibles en vez de recrearlo tres veces, y al final el paquete de proyecto (LEEME.md, harness.txt, tokens/, contracts/) listo para exportar",
+      "expected_output": "Plan de contratación (árbol de piezas) confirmado con el usuario antes de compilar nada, contratación pieza por pieza de abajo hacia arriba reutilizando un organismo molde para las tres secciones repetibles en vez de recrearlo tres veces, y al final el paquete de proyecto (LEEME.md, harness.md, tokens/, contracts/) listo para exportar",
       "files": ["tokens.json"],
       "expectations": [
         "El modelo entra en modo descomposición: presenta el árbol/plan de piezas antes de compilar ningún contrato",
         "Identifica que Condiciones, Tarifas y Beneficios comparten estructura y las modela como un organismo molde reutilizado con 'params', no como tres organismos distintos",
         "Cada sección repetible referencia el mismo component_id en 'usa:' en vez de duplicar la definición",
-        "Al pedir el paquete, entrega la estructura de modo proyecto: LEEME.md, harness.txt copiado tal cual, tokens/tokens-extraidos.json y contracts/",
+        "Al pedir el paquete, entrega la estructura de modo proyecto: LEEME.md, harness.md copiado tal cual, tokens/tokens-extraidos.json y contracts/",
         "El LEEME.md generado indica qué contratos están LISTOS y cuáles quedan PENDIENTES"
       ]
     },

@@ -17,6 +17,13 @@ description: >
   heurísticamente una interfaz ya construida (usa evaluacion-heuristica o
   accesibilidad-wcag) ni para generar el código final del componente.
 license: Proprietary — Pragma (uso interno y confidencial)
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - AskUserQuestion
 metadata:
   version: "1.0"
   author: Pragma
@@ -96,7 +103,7 @@ Lee `references/proyecto.md` para la estructura exacta y la plantilla del `LEEME
 ```
 <nombre-del-paquete>/
 ├── LEEME.md                     # orden de lectura + estado + prompt para la IA (se genera)
-├── harness.txt                  # reglas para pintar: copiar TAL CUAL de assets/harness.txt
+├── harness.md                   # reglas para pintar: copiar TAL CUAL de assets/harness.md
 ├── tokens/
 │   └── tokens-extraidos.json    # el JSON que subió el usuario, con este nombre
 └── contracts/
@@ -104,7 +111,7 @@ Lee `references/proyecto.md` para la estructura exacta y la plantilla del `LEEME
     └── <component_id>.template.yaml   # las plantillas (punto de entrada)
 ```
 
-El `harness.txt` es del dueño del sistema y viaja idéntico en todos los paquetes (vive en `assets/` de esta skill). El `LEEME.md` se genera por paquete: inventario de piezas, punto de entrada, estado (completo o con pendientes) y el prompt para la IA con 2-4 recordatorios sacados de los `# OJO / # HALLAZGO / nota:` de los contratos incluidos. Solo entran contratos LISTOS PARA GENERAR; los demás se declaran como PENDIENTES en el LEEME. Empaqueta como carpeta + zip y preséntalo.
+El `harness.md` es del dueño del sistema y viaja idéntico en todos los paquetes (vive en `assets/` de esta skill). El `LEEME.md` se genera por paquete: inventario de piezas, punto de entrada, estado (completo o con pendientes) y el prompt para la IA con 2-4 recordatorios sacados de los `# OJO / # HALLAZGO / nota:` de los contratos incluidos. Solo entran contratos LISTOS PARA GENERAR; los demás se declaran como PENDIENTES en el LEEME. Empaqueta como carpeta + zip y preséntalo.
 
 ## Entrega
 

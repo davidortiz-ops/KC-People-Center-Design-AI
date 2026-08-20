@@ -7,7 +7,7 @@ Lee este archivo cuando el usuario pida "el proyecto", "el paquete", "exportar" 
 ```
 <nombre-del-paquete>/            # ej: paquete-crear-paquete/
 ├── LEEME.md                     # orden de lectura + estado + prompt para la IA
-├── harness.txt                  # reglas para pintar (copiar de assets/harness.txt, NO reescribir)
+├── harness.md                   # reglas para pintar (copiar de assets/harness.md, NO reescribir)
 ├── tokens/
 │   └── tokens-extraidos.json    # el JSON que subió el usuario, con este nombre
 └── contracts/
@@ -17,7 +17,7 @@ Lee este archivo cuando el usuario pida "el proyecto", "el paquete", "exportar" 
 
 Reglas:
 - Un archivo por contrato: `<component_id>.contract.yaml`; las plantillas van como `.template.yaml`.
-- `harness.txt` se copia tal cual desde `assets/harness.txt` de esta skill. Es del dueño del sistema: no se edita por proyecto. Si el usuario quiere cambiar una regla del harness, eso se cambia en la skill, no en un paquete.
+- `harness.md` se copia tal cual desde `assets/harness.md` de esta skill. Es del dueño del sistema: no se edita por proyecto. Si el usuario quiere cambiar una regla del harness, eso se cambia en la skill, no en un paquete.
 - `tokens/tokens-extraidos.json` es el JSON del usuario con el nombre estándar.
 - Solo entran contratos con veredicto LISTO PARA GENERAR; los pendientes se declaran en LEEME.md.
 - Entregar la carpeta comprimida en `.zip` y presentarla.
@@ -30,7 +30,7 @@ Generarlo llenando los huecos:
 # Paquete para pintar la vista "{nombre de la plantilla}" ({COMPLETO | CON PENDIENTES})
 
 ## Orden de lectura
-1. harness.txt
+1. harness.md
 2. tokens/tokens-extraidos.json
 3. contracts/{punto-de-entrada}.template.yaml  (punto de entrada)
 4. el resto de contracts/
@@ -44,13 +44,13 @@ Plantilla: {nombre}.
 
 ## Prompt para la IA
 ---------------------------------------------------------------
-Usa el paquete adjunto. Léelo en orden: harness.txt, tokens/, contracts/.
+Usa el paquete adjunto. Léelo en orden: harness.md, tokens/, contracts/.
 
 Pinta la INTERFAZ FINAL de contracts/{punto-de-entrada}.template.yaml, tal como
 la vería un usuario real en producción. Es una pantalla funcional, NO un diagrama:
 sin etiquetas de tokens, sin anotaciones, sin líneas de composición.
 
-Obedece harness.txt en todo. Aplica los tokens a toda superficie. Respeta las
+Obedece harness.md en todo. Aplica los tokens a toda superficie. Respeta las
 celdas de cada rejilla.
 {2-4 recordatorios específicos de este paquete: las reglas que las IAs suelen
 romper en ESTAS piezas — ej: "cada sección usa su propia fila", "el bote de

@@ -8,13 +8,13 @@ Versión 1.0 · People Center Design · Pragma
 
 ## ¿Qué hace?
 
-Traduce una pieza de interfaz (botón, campo, tarjeta, sección repetible, pantalla completa) a un contrato YAML que fija sus estados, su composición, su cableado a tokens y su accesibilidad — sin que el diseñador tenga que escribir YAML. El diseñador solo aporta: el JSON de tokens de su sistema, la intención de la pieza (ficha) y, si aplica, el código o la captura de una pieza existente. El skill compila el contrato, lo valida contra un checklist de 7 puntos y, cuando hay varios contratos, los empaqueta en un proyecto portable con instrucciones (`harness.txt`) para que cualquier IA genere la interfaz igual.
+Traduce una pieza de interfaz (botón, campo, tarjeta, sección repetible, pantalla completa) a un contrato YAML que fija sus estados, su composición, su cableado a tokens y su accesibilidad — sin que el diseñador tenga que escribir YAML. El diseñador solo aporta: el JSON de tokens de su sistema, la intención de la pieza (ficha) y, si aplica, el código o la captura de una pieza existente. El skill compila el contrato, lo valida contra un checklist de 7 puntos y, cuando hay varios contratos, los empaqueta en un proyecto portable con instrucciones (`harness.md`) para que cualquier IA genere la interfaz igual.
 
 **Tres entregables:**
 
 - **Contrato individual** — un YAML validado para una pieza (átomo, molécula, organismo o plantilla).
 - **Plan de descomposición** — el árbol de piezas de una página completa, con reutilización contra la biblioteca existente, antes de compilar nada.
-- **Paquete de proyecto** — carpeta portable (`LEEME.md`, `harness.txt`, `tokens/`, `contracts/`) lista para entregar a otro equipo o a otra IA.
+- **Paquete de proyecto** — carpeta portable (`LEEME.md`, `harness.md`, `tokens/`, `contracts/`) lista para entregar a otro equipo o a otra IA.
 
 ---
 
@@ -37,7 +37,7 @@ Cuando el usuario describe una página completa (no una pieza suelta), el skill 
 |---|---|
 | **Diseñador de producto / UX** | Especificar una pieza de UI sin escribir YAML a mano, garantizando que use los tokens reales del sistema. |
 | **Design system owner** | Mantener una biblioteca de contratos que se reutiliza (Regla de Oro) en vez de recrear piezas cada vez que aparecen en una nueva pantalla. |
-| **Equipo que trabaja con varias IAs** | Producir un paquete portable (`harness.txt` + contratos) para que Claude, ChatGPT, Gemini o Copilot generen la misma interfaz sin depender del modelo. |
+| **Equipo que trabaja con varias IAs** | Producir un paquete portable (`harness.md` + contratos) para que Claude, ChatGPT, Gemini o Copilot generen la misma interfaz sin depender del modelo. |
 | **Ingeniero de frontend** | Partir de un contrato validado como fuente de verdad antes de construir el componente en código. |
 | **Consultor de design systems** | Auditar o migrar componentes existentes (código, Figma) a contratos formales para estandarizar cómo se generan con IA. |
 
@@ -89,7 +89,7 @@ No necesitas elegir un modo. El skill funciona igual en ambos porque no tiene mo
 contratos-de-diseno/
 ├── SKILL.md                              # Lógica principal (tokens → ficha → compilar → validar)
 ├── assets/
-│   └── harness.txt                       # Reglas de pintado, viaja idéntico en cada paquete de proyecto
+│   └── harness.md                        # Reglas de pintado, viaja idéntico en cada paquete de proyecto
 ├── references/                           # 8 referencias + 2 contratos canónicos
 │   ├── tokens.md                         # Cómo leer el JSON de tokens del usuario
 │   ├── ficha.md                          # Texto canónico de la entrevista
@@ -122,7 +122,7 @@ contratos-de-diseno/
 | `descomposicion.md` | Cómo generar el árbol de piezas de una página completa | Al describir una pantalla o flujo completo |
 | `proyecto.md` | Estructura del paquete portable y plantilla del `LEEME.md` | Al pedir "el proyecto" o "el paquete" |
 | `canonico-atomo-campo.yaml` / `canonico-organismo-molde.yaml` | Contratos reales de producción, usados como plantilla de formato | Junto con `esqueleto.md` |
-| `assets/harness.txt` | Reglas de pintado para quien consuma el paquete | Se copia tal cual en cada paquete de proyecto |
+| `assets/harness.md` | Reglas de pintado para quien consuma el paquete | Se copia tal cual en cada paquete de proyecto |
 
 ---
 
@@ -132,7 +132,7 @@ contratos-de-diseno/
 - Ancla cada sesión al JSON de tokens real del usuario: nunca trae ni inventa tokens propios.
 - Cubre los cuatro modos de entrada: desde cero, descomposición de página, extracción desde código/Figma existente, y validación de un YAML ya escrito.
 - Aplica la Regla de Oro de reutilización: las piezas compuestas referencian sus piezas hijas por `component_id`, nunca las recrean.
-- Empaqueta el resultado en un proyecto portable (`LEEME.md`, `harness.txt`, `tokens/`, `contracts/`) interpretable por cualquier IA.
+- Empaqueta el resultado en un proyecto portable (`LEEME.md`, `harness.md`, `tokens/`, `contracts/`) interpretable por cualquier IA.
 - No requiere instalación ni scripts: todo el flujo es de interpretación de lenguaje.
 
 ## Limitaciones
