@@ -19,17 +19,13 @@ e-commerce, GEO (búsqueda con IA), estrategia y SEO programático.
 ```
 seo/
 ├── README.md                  ← este archivo
-├── seo/                       ← skill orquestador + recursos compartidos
+├── seo/                       ← skill orquestador + referencias compartidas
 │   ├── SKILL.md
-│   ├── references/            ← documentación cargada bajo demanda
-│   │   ├── cwv-thresholds.md
-│   │   ├── eeat-framework.md
-│   │   ├── google-seo-reference.md
-│   │   ├── gsc-ga4-integration.md
-│   │   ├── quality-gates.md
-│   │   └── schema-types.md
-│   ├── assets/templates.json  ← plantillas JSON-LD (schema.org)
-│   └── scripts/               ← utilidades (fetch, parse, screenshot, visual)
+│   └── references/            ← documentación cargada bajo demanda
+│       ├── cwv-thresholds.md
+│       ├── eeat-framework.md
+│       ├── quality-gates.md
+│       └── schema-types.md
 ├── seo-google/
 │   ├── SKILL.md
 │   └── scripts/gsc_query.py   ← consulta agnóstica a Search Console
@@ -109,41 +105,34 @@ definir en el entorno o en un archivo `.env`):
 | `GOOGLE_APPLICATION_CREDENTIALS` | `seo-google` (`gsc_query.py`) | Ruta al JSON de la cuenta de servicio de Google Cloud (acceso a Search Console). |
 | `GSC_SITE` | `seo-google` (`gsc_query.py`) | Propiedad de Search Console (ej. `sc-domain:tu-sitio.com`). Si se omite, se deriva del dominio de la URL. |
 | `CMS_API_URL` | `seo-google` (workflow GSC Insights) | URL base de la API del CMS para extraer el contenido real de la página (opcional). |
-| `SEO_DOTENV` | scripts | Ruta explícita a un archivo `.env`. Si se omite, se busca automáticamente subiendo desde el directorio actual. |
+| `SEO_DOTENV` | `seo-google` (`gsc_query.py`) | Ruta explícita a un archivo `.env`. Si se omite, se busca automáticamente subiendo desde el directorio actual. |
 
 > Para usar scripts adicionales de tu propio stack (extracción combinada de GSC+GA4,
 > conectores, etc.), las skills referencian rutas genéricas tipo `<tu-stack>/scripts/...`
 > que debes ajustar a la estructura de tu proyecto. No se incluyen en este repositorio.
 
-### Dependencias de los scripts en Python
+### Dependencias de Python
+
+Solo `seo-google/scripts/gsc_query.py` requiere dependencias externas:
 
 ```bash
-pip install requests beautifulsoup4 lxml playwright python-dotenv \
-    google-api-python-client google-auth
-playwright install chromium   # solo para capture_screenshot.py y analyze_visual.py
+pip install google-api-python-client google-auth python-dotenv
 ```
+
+El resto de las skills opera sin dependencias: el análisis se hace por web.
 
 ---
 
-## Recursos compartidos (carpeta `seo/`)
-
-### Scripts (`seo/scripts/`)
-| Script | Propósito |
-|--------|-----------|
-| `fetch_page.py` | Descarga una página con cabeceras adecuadas, manejo de errores y prevención de SSRF. Detecta renderizado dinámico con el UA de Googlebot. |
-| `parse_html.py` | Extrae elementos SEO del HTML (title, meta, encabezados, imágenes, enlaces, schema, hreflang, conteo de palabras). |
-| `capture_screenshot.py` | Captura screenshots por viewport (desktop/laptop/tablet/mobile) con Playwright. |
-| `analyze_visual.py` | Analiza above-the-fold, responsividad móvil y tipografía con Playwright. |
+## Recursos compartidos
 
 ### Referencias (`seo/references/`)
-Documentación cargada **bajo demanda** por las skills (no toda al inicio):
-`cwv-thresholds.md`, `eeat-framework.md`, `quality-gates.md`, `schema-types.md`,
-`gsc-ga4-integration.md` y la referencia rápida `google-seo-reference.md`.
+Documentación cargada **bajo demanda** por la skill `seo` (no toda al inicio):
+`cwv-thresholds.md`, `eeat-framework.md`, `quality-gates.md` y `schema-types.md`.
 
-### Plantillas de schema (`seo/assets/templates.json`)
-Plantillas JSON-LD listas para usar (VideoObject, ProductGroup, ProfilePage,
-Certification, OfferShippingDetails, etc.). Las claves y valores de schema.org se
-mantienen en su forma estándar; las descripciones y placeholders están en español.
+### Script de Search Console (`seo-google/scripts/`)
+| Script | Propósito |
+|--------|-----------|
+| `gsc_query.py` | Consulta agnóstica a Search Console para el workflow de Oportunidades de Keywords. |
 
 ### Plantillas de estrategia (`seo-plan/assets/`)
 Plantillas por industria para `seo-plan`: `generic.md`, `saas.md`, `ecommerce.md`,

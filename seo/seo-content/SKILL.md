@@ -20,7 +20,7 @@ allowed-tools:
 
 ## Framework E-E-A-T (actualizado QRG Sept 2025)
 
-Leer `seo/references/eeat-framework.md` para los criterios completos.
+Para los criterios completos de E-E-A-T se usa la skill **seo**, que mantiene el framework de referencia actualizado.
 
 ### Experiencia (señales de primera mano)
 - Investigación original, casos de estudio, resultados antes/después

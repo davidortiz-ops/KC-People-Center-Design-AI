@@ -54,7 +54,7 @@
 
 ### Schema adicional de e-commerce (2025)
 
-- **ProductGroup**: Úsalo para productos con variantes (talla, color). Envuelve entradas Product individuales con las propiedades `variesBy` y `hasVariant`. Ver `schema/templates.json`.
+- **ProductGroup**: Úsalo para productos con variantes (talla, color). Envuelve entradas Product individuales con las propiedades `variesBy` y `hasVariant`. Para el marcado se usa la skill `seo-schema`.
 - **Certification**: Para certificaciones de producto (Energy Star, seguridad, orgánico). Reemplazó a EnergyConsumptionDetails (abril 2025). Usa `hasCertification` en Product.
 - **OfferShippingDetails**: Incluye tarifa de envío, tiempo de manipulación y tiempo de tránsito. Crítico para la elegibilidad en Merchant Center.
 

@@ -20,7 +20,6 @@ allowed-tools:
   - Grep
   - Glob
   - AskUserQuestion
-  - Bash
   - WebFetch
   - WebSearch
 ---
