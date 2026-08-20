@@ -24,13 +24,12 @@ seo/
 │   ├── references/            ← documentación cargada bajo demanda
 │   │   ├── cwv-thresholds.md
 │   │   ├── eeat-framework.md
+│   │   ├── google-seo-reference.md
 │   │   ├── gsc-ga4-integration.md
 │   │   ├── quality-gates.md
 │   │   └── schema-types.md
-│   ├── pdf/google-seo-reference.md
-│   ├── schema/templates.json  ← plantillas JSON-LD (schema.org)
-│   ├── scripts/               ← utilidades (fetch, parse, screenshot, visual)
-│   └── hooks/                 ← hooks pre-commit y validación de schema
+│   ├── assets/templates.json  ← plantillas JSON-LD (schema.org)
+│   └── scripts/               ← utilidades (fetch, parse, screenshot, visual)
 ├── seo-google/
 │   ├── SKILL.md
 │   └── scripts/gsc_query.py   ← consulta agnóstica a Search Console
@@ -139,20 +138,12 @@ playwright install chromium   # solo para capture_screenshot.py y analyze_visual
 ### Referencias (`seo/references/`)
 Documentación cargada **bajo demanda** por las skills (no toda al inicio):
 `cwv-thresholds.md`, `eeat-framework.md`, `quality-gates.md`, `schema-types.md`,
-`gsc-ga4-integration.md`, y la referencia rápida `seo/pdf/google-seo-reference.md`.
+`gsc-ga4-integration.md` y la referencia rápida `google-seo-reference.md`.
 
-### Plantillas de schema (`seo/schema/templates.json`)
+### Plantillas de schema (`seo/assets/templates.json`)
 Plantillas JSON-LD listas para usar (VideoObject, ProductGroup, ProfilePage,
 Certification, OfferShippingDetails, etc.). Las claves y valores de schema.org se
 mantienen en su forma estándar; las descripciones y placeholders están en español.
-
-### Hooks (`seo/hooks/`)
-| Hook | Propósito |
-|------|-----------|
-| `validate-schema.py` | Valida JSON-LD tras editar archivos (PostToolUse). Bloquea (exit 2) ante placeholders, tipos obsoletos o JSON inválido. |
-| `pre-commit-seo-check.sh` | Verificación SEO previa al commit: placeholders, longitud de title/meta, alt text, schema obsoleto, referencias a FID. |
-
-Ambos detectan placeholders tanto en inglés como en español.
 
 ### Plantillas de estrategia (`seo-plan/assets/`)
 Plantillas por industria para `seo-plan`: `generic.md`, `saas.md`, `ecommerce.md`,
