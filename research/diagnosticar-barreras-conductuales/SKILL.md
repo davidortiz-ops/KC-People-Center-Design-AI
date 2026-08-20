@@ -3,6 +3,12 @@ name: diagnosticar-barreras-conductuales
 description: Diagnostica barreras de capacidad, oportunidad y motivación; formula hipótesis sobre sesgos cognitivos y diseña intervenciones conductuales éticas y evaluables. Úsalo para analizar abandono, indecisión, baja adopción o incumplimiento de un comportamiento objetivo sin presentar correlaciones como causas.
 license: "Propietaria de Pragma; uso interno exclusivo. Ver LICENSE.txt."
 compatibility: "Compatible con Claude Code, Codex y agentes que implementen Agent Skills. Requiere acceso de lectura a evidencia conductual cualitativa o cuantitativa."
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
 metadata:
   author: "Pragma"
   version: "1.0.0"

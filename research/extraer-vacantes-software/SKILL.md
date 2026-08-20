@@ -3,6 +3,12 @@ name: extraer-vacantes-software
 description: Extrae y normaliza información estructurada de una o varias vacantes de desarrollo de software, incluyendo empresa, sector, cargo, seniority, ubicación, modalidad, contrato, stack, experiencia y salario. Úsalo para convertir anuncios no estructurados en tablas o JSON auditables sin inventar datos.
 license: "Propietaria de Pragma; uso interno exclusivo. Ver LICENSE.txt."
 compatibility: "Compatible con Claude Code, Codex y agentes que implementen Agent Skills. Requiere acceso de lectura a textos o archivos de vacantes; no requiere herramientas externas."
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
 metadata:
   author: "Pragma"
   version: "1.0.0"

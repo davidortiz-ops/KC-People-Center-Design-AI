@@ -3,6 +3,13 @@ name: analizar-contenido-tematico
 description: Analiza entrevistas, respuestas abiertas, documentos, notas y transcripciones mediante codificación temática inductiva, deductiva o híbrida. Úsalo para crear códigos y categorías, comparar segmentos, construir diccionarios de códigos y sintetizar hallazgos cualitativos con trazabilidad hasta la evidencia.
 license: "Propietaria de Pragma; uso interno exclusivo. Ver LICENSE.txt."
 compatibility: "Compatible con Claude Code, Codex y agentes que implementen Agent Skills. Requiere acceso de lectura al corpus cualitativo. No requiere herramientas externas."
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - AskUserQuestion
 metadata:
   author: "Pragma"
   version: "1.0.0"

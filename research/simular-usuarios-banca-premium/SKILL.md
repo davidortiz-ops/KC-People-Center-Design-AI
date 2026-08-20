@@ -3,6 +3,13 @@ name: simular-usuarios-banca-premium
 description: Construye, audita y opera perfiles sintéticos de clientes de banca premium basados en investigación identificable. Úsalo para explorar expectativas, criterios de confianza, fricciones y reacciones hipotéticas dentro de un perfil documentado, sin sustituir investigación real, validar demanda ni inventar comportamientos.
 license: "Propietaria de Pragma; uso interno exclusivo. Ver LICENSE.txt."
 compatibility: "Compatible con Claude Code, Codex y agentes que implementen Agent Skills. Requiere investigación base o un perfil documentado accesible como texto o archivo."
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - AskUserQuestion
 metadata:
   author: "Pragma"
   version: "1.0.0"

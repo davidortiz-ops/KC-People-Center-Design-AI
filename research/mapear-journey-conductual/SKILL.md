@@ -3,6 +3,13 @@ name: mapear-journey-conductual
 description: Construye Behavioral Customer Journey Maps a partir de entrevistas, observaciones, analytics y evidencia de producto. Úsalo para mapear etapas, acciones, decisiones, emociones, motivaciones, fricciones, canales, transiciones y momentos de verdad para un actor y escenario concretos.
 license: "Propietaria de Pragma; uso interno exclusivo. Ver LICENSE.txt."
 compatibility: "Compatible con Claude Code, Codex y agentes que implementen Agent Skills. Requiere acceso de lectura a evidencia cualitativa o cuantitativa del journey."
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - AskUserQuestion
 metadata:
   author: "Pragma"
   version: "1.0.0"

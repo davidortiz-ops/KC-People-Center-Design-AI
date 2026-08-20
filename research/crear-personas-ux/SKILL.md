@@ -3,6 +3,13 @@ name: crear-personas-ux
 description: Crea personas UX conductuales y accionables a partir de entrevistas, encuestas, observaciones y otras fuentes de investigación. Úsalo para segmentar usuarios por objetivos, comportamientos, contexto, barreras y criterios de decisión, manteniendo trazabilidad y evitando estereotipos o atributos inventados.
 license: "Propietaria de Pragma; uso interno exclusivo. Ver LICENSE.txt."
 compatibility: "Compatible con Claude Code, Codex y agentes que implementen Agent Skills. Requiere acceso de lectura a evidencia de investigación de usuarios."
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - AskUserQuestion
 metadata:
   author: "Pragma"
   version: "1.0.0"

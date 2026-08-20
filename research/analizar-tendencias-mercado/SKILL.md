@@ -3,6 +3,15 @@ name: analizar-tendencias-mercado
 description: Analiza fuentes actuales de mercado para distinguir hechos, tendencias, señales débiles e incertidumbres; evalúa madurez e impacto y construye escenarios prospectivos trazables. Úsalo para inteligencia de mercado, vigilancia estratégica, análisis PESTEL, oportunidades, riesgos y recomendaciones por horizonte temporal.
 license: "Propietaria de Pragma; uso interno exclusivo. Ver LICENSE.txt."
 compatibility: "Compatible con Claude Code, Codex y agentes que implementen Agent Skills. Puede requerir navegación web para información actual y acceso de lectura a las fuentes aportadas."
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - AskUserQuestion
+  - WebFetch
+  - WebSearch
 metadata:
   author: "Pragma"
   version: "1.0.0"
