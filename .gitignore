@@ -22,3 +22,6 @@ Thumbs.db
 .idea/
 .vscode/
 *.swp
+
+# Catálogos temporales de trabajo (no forman parte del repo)
+mimir.md
