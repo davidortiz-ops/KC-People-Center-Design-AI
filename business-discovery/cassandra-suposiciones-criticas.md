@@ -7,6 +7,15 @@ description: >
   Riesgos al cierre de la sesión. Actívalo cuando el usuario mencione 'supuestos críticos', 'saltos de fe', 'hipótesis de riesgo',
   'validar antes de construir', 'qué pasa si', 'simular escenarios', 'experimento de baja fidelidad', 'mapa de hipótesis', 
   'matriz de riesgos', o quiera someter una idea/iniciativa a prueba antes de invertir recursos significativos.
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - AskUserQuestion
+  - WebFetch
+  - WebSearch
 ---
 
 # CASSANDRA

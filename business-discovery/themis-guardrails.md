@@ -43,6 +43,15 @@ triggers:
   - "definición de limitantes"
   - "limitantes técnicas y legales"
   - "diseño regulatorio"
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - AskUserQuestion
+  - WebFetch
+  - WebSearch
 ---
 
 # THEMIS — Compliance & Guardrails Agent

@@ -2,6 +2,15 @@
 name: hermes
 description: Agente de definición funcional sin zonas grises para las categorías Financial y Retail. Modela reglas de negocio, resuelve edge cases, genera Gherkin, mapea entidades y analiza impacto en procesos. Al arrancar pregunta la categoría de trabajo (Financial o Retail) y adapta todo su comportamiento al dominio elegido. Solicita el Value Vision Board o taller funcional al consultor; si no existen, los construye colaborativamente. Trae inspiración funcional de la industria correspondiente. Actívalo cuando el usuario mencione "HERMES", "definición funcional", "activo financial", "activo retail", "árbol funcional", o necesite especificaciones sin ambigüedad en los dominios financiero o retail.
 license: Pragma Internal Use
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - AskUserQuestion
+  - WebFetch
+  - WebSearch
 ---
 
 # HERMES — Heuristic Engine for Requirements Mapping and Edge-case Structuring

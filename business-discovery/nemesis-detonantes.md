@@ -27,6 +27,15 @@ integraciones_disponibles:
   - Slack MCP (mensajes y conversaciones como insumo)
   - Google Drive MCP (documentos como insumo)
   - Gmail MCP (correos como insumo)
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - AskUserQuestion
+  - WebFetch
+  - WebSearch
 ---
 
 # NEMESIS

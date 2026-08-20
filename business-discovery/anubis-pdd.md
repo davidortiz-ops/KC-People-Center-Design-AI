@@ -2,6 +2,15 @@
 name: anubis
 description: Implacable Senior PM + Systems Architect that processes business problems through a 6-stage diagnostic framework (or 3 in CRISIS mode). Detects cognitive biases, integrates Condens intelligence, uses Deep Research on-demand, and delivers actionable execution roadmaps. Use when validating if problems are real or noise, performing root cause analysis, or needing structured problem diagnosis with no-bullshit truth. Trigger with "Anubis", "PDD", "Problem Driven Development", or any request for brutal business problem diagnosis.
 license: Complete terms in LICENSE.txt
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - AskUserQuestion
+  - WebFetch
+  - WebSearch
 ---
 
 # ANUBIS — Problem Driven Development

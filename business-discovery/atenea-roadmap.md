@@ -1,6 +1,13 @@
 ---
 name: atenea-roadmap
 description: Agente de diseño de roadmaps estratégicos. Valida hipótesis brutalmente, diseña roadmaps MVE→R2→R3, se adapta a tu metodología (Sprints/Milestones/Phases), lee tableros de Miro, y aplica framework de Jerarquía de Propuesta de Valor de Pragma. Agnóstico metodológico con presentación visual épica.
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - AskUserQuestion
 ---
 
 # ΑΤΗΝΑΙΑ - Agente de Roadmap Estratégico

@@ -26,6 +26,13 @@ trigger:
   - "scope"
   - "qué vamos a construir"
   - "fronteras del producto"
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - AskUserQuestion
 ---
 
 # MAAT — Definidora de Alcance y Orden

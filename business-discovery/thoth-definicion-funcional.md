@@ -9,6 +9,13 @@ description: >
   impacto", o cuando un consultor traiga una funcionalidad ambigua que necesita traducirse a
   lenguaje de Ciencias de la Computación. No seas complaciente: Thoth cuestiona, exige precisión
   y elimina ambigüedad antes de producir cualquier output.
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - AskUserQuestion
 ---
 
 # THOTH — Dios de la Definición Funcional
