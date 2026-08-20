@@ -357,14 +357,7 @@
     transition: transform .5s var(--ease), border-color .3s var(--ease);
   }
   .card:hover { transform: translateY(-4px); }
-  .card-top { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
   .card-name { font-family: var(--f-display); font-weight: 700; font-size: 1.375rem; margin: 0; letter-spacing: -.012em; }
-  .card-count {
-    font-family: var(--f-mono); font-weight: 600; font-size: 1.125rem;
-    font-variant-numeric: tabular-nums; color: var(--accent-text);
-    background: var(--accent-wash); border: 1px solid var(--accent-edge);
-    border-radius: 999px; padding: .1rem .65rem; white-space: nowrap;
-  }
   .card-body { font-size: 1rem; color: var(--ink-soft); margin: 0; }
   .card-tags { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: auto; padding-top: .5rem; }
   .tag {
@@ -626,8 +619,8 @@
   <section class="slide" aria-label="Portada">
     <div class="inner">
       <p class="eyebrow">People Centered Design · Pragma</p>
-      <h1>Los 4 chapters ya están cargados en Mimir</h1>
-      <p class="lede">45 skills del knowledge center, disponibles en el catálogo con nombre, descripción, licencia, metadata y herramientas declaradas. Lo que viene ahora es ponerlos a prueba.</p>
+      <h1>Los 4 chapters están en Mimir</h1>
+      <p class="lede">45 skills del knowledge center, disponibles en el catálogo con nombre, descripción, licencia, metadata y herramientas declaradas. El siguiente paso es ponerlos a prueba.</p>
       <p class="stamp">20 de agosto de 2026 · sopp-apps.pragma.com.co</p>
     </div>
   </section>
@@ -636,7 +629,7 @@
   <section class="slide" aria-label="El estado en cifras">
     <div class="inner">
       <p class="eyebrow">Dónde estamos</p>
-      <h2>El estado, en cuatro cifras</h2>
+      <h2>Estado Actual</h2>
       <div class="stats">
         <div class="stat">
           <span class="stat-n" data-count="4">0</span>
@@ -666,7 +659,7 @@
   <section class="slide" aria-label="Tamaño de cada chapter">
     <div class="inner">
       <p class="eyebrow">Proporción</p>
-      <h2>No todos pesan lo mismo</h2>
+      <h2>Distribución de Skills</h2>
       <div class="bars">
         <div class="bar-row">
           <span class="bar-label"><span class="bar-name">SEO</span><span class="bar-tags">1 orquestadora + 20 especialistas</span></span>
@@ -689,37 +682,8 @@
     </div>
   </section>
 
-  <!-- 4 · INVENTARIO -->
-  <section class="slide" aria-label="Qué hay en cada chapter">
-    <div class="inner">
-      <p class="eyebrow">El inventario</p>
-      <h2>Qué hay en cada chapter</h2>
-      <div class="grid-2">
-        <article class="card">
-          <div class="card-top"><h3 class="card-name">Research</h3><span class="card-count">7</span></div>
-          <p class="card-body">Investigación cualitativa con trazabilidad hasta la evidencia. Codifica corpus, construye personas y mapea comportamiento sin inventar datos.</p>
-          <div class="card-tags"><span class="tag">contenido-temático</span><span class="tag">personas-ux</span><span class="tag">journey</span><span class="tag">usuarios-sintéticos</span></div>
-        </article>
-        <article class="card">
-          <div class="card-top"><h3 class="card-name">Diseño de Soluciones</h3><span class="card-count">7</span></div>
-          <p class="card-body">Del diagnóstico a la especificación. Audita accesibilidad y usabilidad, y convierte piezas de UI en contratos que cualquier IA interpreta igual.</p>
-          <div class="card-tags"><span class="tag">wcag-2.2</span><span class="tag">contratos</span><span class="tag">design-system</span><span class="tag">heurísticas</span></div>
-        </article>
-        <article class="card">
-          <div class="card-top"><h3 class="card-name">Business Discovery</h3><span class="card-count">10</span></div>
-          <p class="card-body">Agentes que exigen contexto antes de producir: diagnostican el problema, validan supuestos, acotan alcance y definen la métrica norte.</p>
-          <div class="card-tags"><span class="tag">anubis</span><span class="tag">némesis</span><span class="tag">casandra</span><span class="tag">maat</span><span class="tag">mímir</span><span class="tag">themis</span></div>
-        </article>
-        <article class="card">
-          <div class="card-top"><h3 class="card-name">SEO</h3><span class="card-count">21</span></div>
-          <p class="card-body">El chapter más grande: una skill orquestadora y 20 especialistas que se reparten auditoría, contenido, datos de Google, búsqueda con IA y estrategia.</p>
-          <div class="card-tags"><span class="tag">seo-audit</span><span class="tag">seo-content</span><span class="tag">seo-geo</span><span class="tag">seo-google</span><span class="tag">seo-plan</span></div>
-        </article>
-      </div>
-    </div>
-  </section>
 
-  <!-- 5 · DÓNDE VIVE -->
+  <!-- 4 · DÓNDE VIVE -->
   <section class="slide" aria-label="Dónde vive cada cosa">
     <div class="inner">
       <p class="eyebrow">Los dos rieles</p>
@@ -730,7 +694,7 @@
           <span class="rail-state is-done"><span class="dot"></span>Hecho</span>
           <h3 class="rail-title">Mimir · el catálogo</h3>
           <p class="rail-url"><a href="https://sopp-apps.pragma.com.co/" target="_blank" rel="noopener">sopp-apps.pragma.com.co</a></p>
-          <p>Los 45 skills de los 4 chapters ya están cargados, cada uno con su título, nombre técnico, descripción, tags, categoría, licencia de Pragma, metadata y herramientas permitidas.</p>
+          <p>Los 45 skills de los 4 chapters están disponibles, cada uno con su título, nombre técnico, descripción, tags, categoría, licencia de Pragma, metadata y herramientas permitidas.</p>
         </div>
         <div class="rail">
           <span class="rail-state is-next"><span class="dot"></span>Siguiente paso</span>
@@ -742,37 +706,8 @@
     </div>
   </section>
 
-  <!-- 6 · LO ESTANDARIZADO -->
-  <section class="slide" aria-label="Lo que se estandarizó">
-    <div class="inner">
-      <p class="eyebrow">Trabajo de base</p>
-      <h2>Lo que quedó parejo antes de cargar</h2>
-      <div class="ledger">
-        <div class="ledger-row">
-          <span class="ledger-k">45 / 45</span>
-          <p class="ledger-v"><strong>Herramientas declaradas.</strong> Cada skill dice qué puede tocar, derivado de lo que realmente hace: <span class="chip-code">Bash</span> solo donde invoca un script, <span class="chip-code">WebSearch</span> solo donde investiga, <span class="chip-code">AskUserQuestion</span> donde debe pedir contexto.</p>
-        </div>
-        <div class="ledger-row">
-          <span class="ledger-k">21</span>
-          <p class="ledger-v"><strong>Licencia y metadata en SEO.</strong> Era el único chapter sin declararlas. Ahora las 21 llevan licencia de Pragma, versión y autor en el frontmatter.</p>
-        </div>
-        <div class="ledger-row">
-          <span class="ledger-k">3</span>
-          <p class="ledger-v"><strong>Carpetas, no más.</strong> La estructura quedó reducida a <span class="chip-code">references/</span>, <span class="chip-code">scripts/</span> y <span class="chip-code">assets/</span>. Fuera la configuración local que no le sirve a nadie en otro repositorio.</p>
-        </div>
-        <div class="ledger-row">
-          <span class="ledger-k">42 → 33</span>
-          <p class="ledger-v"><strong>Archivos que sobraban.</strong> Nueve archivos sin un solo consumidor salieron de SEO, incluidos cuatro scripts que ninguna skill invocaba.</p>
-        </div>
-        <div class="ledger-row">
-          <span class="ledger-k">0</span>
-          <p class="ledger-v"><strong>Referencias por ruta.</strong> Las skills ahora se citan por mención y no por ubicación de archivo, así que cada una se puede migrar por separado sin romperse.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- 7 · SIGUIENTES PASOS -->
+  <!-- 5 · SIGUIENTES PASOS -->
   <section class="slide" aria-label="Siguientes pasos">
     <div class="inner">
       <p class="eyebrow">Próximas semanas</p>
@@ -796,86 +731,79 @@
         <article class="phase">
           <span class="phase-n">FASE 04</span>
           <h3>Actualizar en Kratos</h3>
-          <p>Reemplazar lo que está montado por las versiones vigentes del equipo, y dejar el canal de actualización funcionando.</p>
+          <p>Publicar en Kratos las versiones vigentes del equipo y dejar funcionando el canal de actualización.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- 8 · EMBAJADORES -->
+  <!-- 6 · EMBAJADORES -->
   <section class="slide" aria-label="Embajadores por chapter">
     <div class="inner">
-      <p class="eyebrow">Fase 02 · a definir</p>
-      <h2>Qué le pedimos a cada embajador</h2>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th scope="col">Chapter</th>
-              <th scope="col">Pregunta que debe responder la prueba</th>
-              <th scope="col">Embajador</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>research</td>
-              <td class="plain">¿Los outputs sostienen la trazabilidad hasta la evidencia, o el modelo rellena huecos?</td>
-              <td><span class="pending">por asignar</span></td>
-            </tr>
-            <tr>
-              <td>diseno-de-soluciones</td>
-              <td class="plain">¿La auditoría WCAG y los contratos de diseño sirven tal cual en un proyecto vivo?</td>
-              <td><span class="pending">por asignar</span></td>
-            </tr>
-            <tr>
-              <td>business-discovery</td>
-              <td class="plain">¿Los agentes exigen contexto suficiente antes de producir, o son complacientes?</td>
-              <td><span class="pending">por asignar</span></td>
-            </tr>
-            <tr>
-              <td>seo</td>
-              <td class="plain">¿Los 21 se activan cuando deben y no se pisan entre ellos?</td>
-              <td><span class="pending">por asignar</span></td>
-            </tr>
-          </tbody>
-        </table>
+      <p class="eyebrow">Por definir</p>
+      <h2>Qué le pediremos a cada embajador de chapter</h2>
+      <div class="grid-2">
+        <article class="card">
+          <h3 class="card-name">Activación</h3>
+          <p class="card-body">Confirmar que la skill se active con las palabras que usa la gente en su día a día — y que no se dispare cuando el caso no le corresponde.</p>
+        </article>
+        <article class="card">
+          <h3 class="card-name">Calidad del entregable</h3>
+          <p class="card-body">Revisar si el resultado se puede usar tal cual o hay que rehacerlo, y anotar qué le falta para servir en un proyecto real.</p>
+        </article>
+        <article class="card">
+          <h3 class="card-name">Petición de contexto</h3>
+          <p class="card-body">Verificar que la skill pregunte lo que le falta en lugar de asumirlo, y que no invente datos para llenar huecos.</p>
+        </article>
+        <article class="card">
+          <h3 class="card-name">Scripts y herramientas</h3>
+          <p class="card-body">Ejecutar lo que la skill dice que ejecuta y registrar qué falla, qué no está disponible y qué hay que instalar.</p>
+        </article>
+        <article class="card">
+          <h3 class="card-name">Solapamiento</h3>
+          <p class="card-body">Detectar cuándo dos skills compiten por el mismo caso y definir cuál debería resolverlo.</p>
+        </article>
+        <article class="card">
+          <h3 class="card-name">Registro de hallazgos</h3>
+          <p class="card-body">Dejar por escrito cada falla con el caso que la reproduce, para que se pueda corregir sin adivinar.</p>
+        </article>
       </div>
-      <p class="note">La columna de la derecha es la decisión que necesitamos cerrar para arrancar.</p>
+      <p class="note">Un embajador por chapter. Cerrar la asignación es lo que falta para arrancar.</p>
     </div>
   </section>
 
-  <!-- 9 · PENDIENTES -->
+  <!-- 7 · PENDIENTES -->
   <section class="slide" aria-label="Pendientes conocidos">
     <div class="inner">
       <p class="eyebrow">Sin sorpresas</p>
-      <h2>Lo que ya sabemos que hay que arreglar</h2>
+      <h2>Lo que hay que resolver</h2>
       <div class="risks">
         <div class="risk">
           <div class="risk-bar" aria-hidden="true"></div>
           <div class="risk-body">
-            <h3>Scripts que viven fuera del repositorio</h3>
-            <p>Tres skills de SEO invocan rutas tipo <span class="chip-code">&lt;tu-stack&gt;/scripts/</span> que cada proyecto debe ajustar. <span class="chip-code">seo-audit</span> es la más afectada: su flujo documentado depende de seis scripts que no vienen incluidos.</p>
+            <h3>Scripts que dependen del stack de cada proyecto</h3>
+            <p>Algunas skills invocan scripts que no vienen incluidos en el paquete. Cada proyecto debe apuntar esas rutas a su propia estructura antes de usarlas.</p>
           </div>
         </div>
         <div class="risk risk--mid">
           <div class="risk-bar" aria-hidden="true"></div>
           <div class="risk-body">
-            <h3>Falta decir cuándo preguntar</h3>
-            <p>Los skills ya pueden pedir contexto, pero su texto todavía no instruye en qué momento hacerlo. Sin esa regla escrita, preguntar o asumir queda al criterio del modelo en cada sesión.</p>
+            <h3>Falta definir cuándo preguntar</h3>
+            <p>Cada skill puede pedir contexto al usuario, pero falta definir en su texto en qué momento debe hacerlo. Sin esa regla escrita, preguntar o asumir queda al criterio del modelo en cada sesión.</p>
           </div>
         </div>
         <div class="risk risk--mid">
           <div class="risk-bar" aria-hidden="true"></div>
           <div class="risk-body">
-            <h3>La orquestadora de SEO delega a 20</h3>
-            <p>Si se carga un subconjunto del chapter en lugar de los 21, la orquestadora intentará delegar a especialistas que no están disponibles. Hay que ajustarla al set que se publique.</p>
+            <h3>Delegación entre skills</h3>
+            <p>Cuando una skill orquesta a otras y solo se carga parte del conjunto, intentará delegar en especialistas que no están disponibles. Hay que ajustar su alcance al set que se publique.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 10 · CIERRE -->
+  <!-- 8 · CIERRE -->
   <section class="slide" aria-label="Qué necesitamos">
     <div class="inner">
       <p class="eyebrow">Para arrancar</p>
@@ -893,7 +821,7 @@
 
 <nav class="rail-nav" id="railnav" aria-label="Ir a slide"></nav>
 <div class="chrome">
-  <span class="counter" id="counter" aria-live="polite"><b>1</b> / 10</span>
+  <span class="counter" id="counter" aria-live="polite"><b>1</b> / 8</span>
   <button class="btn" id="fs" type="button">Pantalla completa</button>
 </div>
 <div class="hint" id="hint">↓ ← → para navegar</div>
